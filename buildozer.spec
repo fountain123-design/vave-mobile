@@ -28,6 +28,9 @@ orientation = portrait
 # android.permissions = INTERNET, WRITE_EXTERNAL_STORAGE
 android.permissions = INTERNET
 
+# (bool) Automatically accept Android SDK license (needed for headless CI builds)
+android.accept_sdk_license = True
+
 # (int) Android API to use
 android.api = 33
 android.minapi = 24
