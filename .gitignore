@@ -16,3 +16,5 @@ Thumbs.db
 # Local data
 *.local.json
 user_data/
+
+v_*.txt

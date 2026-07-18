@@ -1,4 +1,0 @@
-auto-height label height: 36.0 texture: [0, 0]
-fixed-height label height: 44.0
-suggest result widgets: 2
-ALL OK
