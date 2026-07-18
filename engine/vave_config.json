@@ -1,0 +1,6 @@
+{
+  "vision_provider": "智谱 GLM-4V",
+  "vision_base_url": "https://open.bigmodel.cn/api/paas/v4",
+  "vision_model": "glm-4.6v-flash",
+  "vision_key": "ad741659587e4bb48eaca2f3c2c67370.l5KdQS5gQcZnl82j"
+}

@@ -1,0 +1,17 @@
+{
+  "_comment": "应用内置默认模型密钥。当用户未在侧边栏配置自己的 Key 时，自动使用此处密钥，实现『开箱即用』。个别用户可在侧边栏填入自己的 Key 覆盖默认。部署到公网时建议改为服务端代理调用，避免密钥暴露。",
+  "text_model": {
+    "provider": "DeepSeek",
+    "label": "文本生成 / AI增强",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-chat",
+    "api_key": "sk-198a9b43007d4c51ad595796f3686eb6"
+  },
+  "vision_model": {
+    "provider": "智谱 GLM-4V",
+    "label": "图纸视觉识别（免费档）",
+    "base_url": "https://open.bigmodel.cn/api/paas/v4",
+    "model": "glm-4.6v-flash",
+    "api_key": "ad741659587e4bb48eaca2f3c2c67370.l5KdQS5gQcZnl82j"
+  }
+}

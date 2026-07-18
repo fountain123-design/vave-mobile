@@ -1,0 +1,43 @@
+# Codemagic CI/CD - VAVE 真原生安卓 APP (Kivy + Buildozer)
+# 触发：push 到 main 分支自动构建 APK
+# 实例用 linux_x2（与之前 Flutter 构建一致，已验证可用）
+
+workflows:
+  android-build:
+    name: Android APK (Kivy)
+    instance_type: linux_x2
+    max_build_duration: 120
+    environment:
+      vars:
+        BUILDOZER_WARN_ON_OLD_PIP: "0"
+        CI: "true"
+    cache:
+      cache_paths:
+        - $HOME/.buildozer
+        - $HOME/.gradle/caches
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+    scripts:
+      - name: 安装系统依赖
+        script: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential git zip unzip openjdk-17-jdk \
+            python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev \
+            libffi-dev libssl-dev libjpeg-dev liblzma-dev
+      - name: 安装 Buildozer
+        script: |
+          pip3 install --upgrade pip
+          pip3 install buildozer "cython<3.0"
+      - name: 构建 APK
+        script: |
+          buildozer -v android debug
+    artifacts:
+      - bin/*.apk
+    publishing:
+      email:
+        recipients:
+          - your-email@example.com   # 改成你的邮箱，构建完成会收到下载链接

@@ -1,0 +1,5108 @@
+{
+  "metadata": {
+    "version": "1.2",
+    "description": "汽车行业VAVE案例知识库 MVP版 v1.1",
+    "categories": [
+      "冲压件",
+      "机加件",
+      "压铸件",
+      "塑料件",
+      "电子件",
+      "管路件",
+      "钣金件",
+      "橡胶件",
+      "标准件",
+      "传动件"
+    ],
+    "data_sources": [
+      "公开论文",
+      "行业培训资料",
+      "内部经验整理",
+      "中国汽车工程学会年会论文",
+      "汽车制造网auto-made.com (2018)",
+      "原创力文档max.book118.com (2025)",
+      "汽车之家chejiahao (2017)",
+      "普拉司网plasway.com (2024-2025)",
+      "SMM上海有色网 (2024-2025)",
+      "知乎专栏 (2020-2022)"
+    ],
+    "strategy_count": 18
+  },
+  "cases": [
+    {
+      "id": "STAMP-001",
+      "category": "冲压件",
+      "part_name": "车身地板横梁",
+      "material": "DC04 冷轧钢板（厚度2.0mm）",
+      "typical_cost_per_kg": 8.5,
+      "typical_weight_kg": 12.5,
+      "typical_cost_per_unit": 106,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "DC04 → B1500HS热成形钢（厚度降至1.5mm）",
+          "expected_savings_pct": 18,
+          "mechanism": "热成形钢强度更高，可减薄降重，同时减少工序",
+          "quality_risk": "需重新做碰撞仿真验证；模具需耐高温材料",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某德系车企地板横梁减薄项目，零件减重3.2kg，单件降本19元"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "加筋减厚：增加局部加强筋，母材厚度从2.0mm降至1.6mm",
+          "expected_savings_pct": 12,
+          "mechanism": "局部加筋弥补厚度损失，整体材料用量减少",
+          "quality_risk": "CAE仿真必须通过；注意与周边零件的搭接关系",
+          "feasibility": "高",
+          "implementation_difficulty": "中等"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "从多工位冲压改为级进模连续冲压",
+          "expected_savings_pct": 22,
+          "mechanism": "减少工序数量和工装数量，提高材料利用率",
+          "quality_risk": "需评估级进模精度控制能力；调试周期长",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "地板横梁",
+        "车身结构件",
+        "冷轧钢",
+        "冲压",
+        "减重"
+      ]
+    },
+    {
+      "id": "STAMP-002",
+      "category": "冲压件",
+      "part_name": "发动机舱盖外板",
+      "material": "DC06 超深冲钢板（厚度0.7mm）",
+      "typical_cost_per_kg": 11.2,
+      "typical_weight_kg": 8.2,
+      "typical_cost_per_unit": 92,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "DC06 → 铝合金薄板（厚度增至1.0mm，重量相近）",
+          "expected_savings_pct": -5,
+          "mechanism": "铝合金材料成本更高，但防腐性能好，漆前处理工艺简化",
+          "quality_risk": "行人保护法规要求；表面质量要求极高",
+          "feasibility": "中（豪华车适用）",
+          "implementation_difficulty": "高",
+          "note": "此方向在普通车上成本增加，不推荐纯降本"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "拓扑优化减重：在非关键区域挖孔减重8%~12%",
+          "expected_savings_pct": 9,
+          "mechanism": "减少不参与承力的材料用量",
+          "quality_risk": "外观面不允许挖孔；内饰侧可做",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "引擎盖",
+        "外板",
+        "冲压",
+        "铝合金",
+        "覆盖件"
+      ]
+    },
+    {
+      "id": "STAMP-003",
+      "category": "冲压件",
+      "part_name": "车门防撞梁",
+      "material": "DP600 双相钢（厚度1.8mm）",
+      "typical_cost_per_kg": 9.8,
+      "typical_weight_kg": 3.8,
+      "typical_cost_per_unit": 37,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "DP600 → HPF热成形钢（厚度降至1.2mm）",
+          "expected_savings_pct": 15,
+          "mechanism": "热成形钢强度提升，可减薄；减少零件数量（一门一根变一体）",
+          "quality_risk": "热成形后硬度高，成形后无法修边，精度控制难",
+          "feasibility": "高",
+          "implementation_difficulty": "中等"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "从闭口截面改为开口截面+焊接拼合（降模具成本）",
+          "expected_savings_pct": 8,
+          "mechanism": "开口件模具简单，模具成本大幅降低",
+          "quality_risk": "开口截面扭转刚度下降，需CAE验证",
+          "feasibility": "中",
+          "implementation_difficulty": "中等"
+        }
+      ],
+      "keywords": [
+        "防撞梁",
+        "车门",
+        "双相钢",
+        "DP钢",
+        "热成形"
+      ]
+    },
+    {
+      "id": "CAST-001",
+      "category": "压铸件",
+      "part_name": "发动机悬置支架",
+      "material": "A380铝合金压铸件",
+      "typical_cost_per_kg": 32,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 58,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "铝合金压铸 → 铁型覆砂铸造（铁型覆砂工艺）",
+          "expected_savings_pct": 25,
+          "mechanism": "铁型覆砂铸造材料利用率提升至85%（压铸约60%），模具寿命极长",
+          "quality_risk": "尺寸精度略低（CT8 vs CT6），需加工的部位需留余量",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某自主车企悬置支架改铁型覆砂，单件降本14.5元，年降百万级"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "A380 → ADC12（成本更低的热处理铝合金）",
+          "expected_savings_pct": 8,
+          "mechanism": "ADC12含铜量不同，价格低于A380约5%~8%",
+          "quality_risk": "耐腐蚀性略差；需确认牌号是否在材料规范内",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "壁厚从3.5mm减至2.5mm（薄壁压铸技术）",
+          "expected_savings_pct": 14,
+          "mechanism": "薄壁化直接减少材料用量",
+          "quality_risk": "充型难度增加，需真空压铸或半固态工艺",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "悬置支架",
+        "铝合金",
+        "压铸",
+        "发动机支架",
+        "悬置"
+      ]
+    },
+    {
+      "id": "CAST-002",
+      "category": "压铸件",
+      "part_name": "转向节",
+      "material": "A356铝合金重力铸造",
+      "typical_cost_per_kg": 28,
+      "typical_weight_kg": 4.2,
+      "typical_cost_per_unit": 118,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "重力铸造 → 低压铸造",
+          "expected_savings_pct": 12,
+          "mechanism": "低压铸造内部质量更致密（针孔少），可减少热处理强化；良率提升",
+          "quality_risk": "需重新做静强度和疲劳试验",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "A356 → 锻造铝合金（6061-T6）",
+          "expected_savings_pct": -3,
+          "mechanism": "锻件强度更高，可减重；但成本更高，一般不推荐纯降本",
+          "quality_risk": "锻件流线分布好，强度高；适合性能车",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "note": "方向适合减重而非降本，综合成本反而增加"
+        }
+      ],
+      "keywords": [
+        "转向节",
+        "铝合金",
+        "铸造",
+        "底盘件",
+        "悬架"
+      ]
+    },
+    {
+      "id": "MACH-001",
+      "category": "机加件",
+      "part_name": "凸轮轴",
+      "material": "QT700-2球墨铸铁（感应淬火）",
+      "typical_cost_per_kg": 15,
+      "typical_weight_kg": 9.5,
+      "typical_cost_per_unit": 143,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "球墨铸铁 → 钢质凸轮轴（45号钢+感应淬火）",
+          "expected_savings_pct": 11,
+          "mechanism": "钢成本低于球铁；感应淬火效率高，表面硬度更好",
+          "quality_risk": "需重新做疲劳试验；与球铁的加工工艺差异大",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "多段感应淬火 → 渗碳淬火（针对凸轮桃面）",
+          "expected_savings_pct": 6,
+          "mechanism": "渗碳层更深，硬化层质量更稳定，减少返工",
+          "quality_risk": "渗碳变形大于感应淬火，精磨余量需放大",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "凸轮轴",
+        "发动机",
+        "铸铁",
+        "机加",
+        "热处理"
+      ]
+    },
+    {
+      "id": "MACH-002",
+      "category": "机加件",
+      "part_name": "连杆",
+      "material": "C70S6高硫钢（涨断工艺）",
+      "typical_cost_per_kg": 18,
+      "typical_weight_kg": 1.1,
+      "typical_cost_per_unit": 20,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "C70S6 → 粉末锻造钢（PM钢）",
+          "expected_savings_pct": 9,
+          "mechanism": "粉末锻造材料利用率>95%（vs C70S6约60%）；少无切削",
+          "quality_risk": "疲劳性能需专项验证；供应商选择有限",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "从涨断连杆改为整体锻造+螺栓连接（降模具成本）",
+          "expected_savings_pct": 18,
+          "mechanism": "整体锻造成本低于涨断工艺；适合中小批量",
+          "quality_risk": "整体锻造的螺栓孔与涨断面的结合强度不如涨断面",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "连杆",
+        "发动机",
+        "涨断",
+        "锻造",
+        "粉末冶金"
+      ]
+    },
+    {
+      "id": "PLAS-001",
+      "category": "塑料件",
+      "part_name": "仪表台本体",
+      "material": "PP+EPDM-TD20（聚丙烯共混物）",
+      "typical_cost_per_kg": 14,
+      "typical_weight_kg": 6.5,
+      "typical_cost_per_unit": 91,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "PP+EPDM-TD20 → PP-TD15（减少EPDM含量，降低乙丙橡胶比例）",
+          "expected_savings_pct": 13,
+          "mechanism": "EPDM价格高，减少用量直接降材料成本",
+          "quality_risk": "低温韧性下降，北方用户投诉风险增加",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某日系仪表台本体将EPDM从20%降至12%，降本12%，但-20°C冲击出现投诉"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "薄壁化：壁厚从3.2mm降至2.5mm",
+          "expected_savings_pct": 11,
+          "mechanism": "直接减少材料用量；注塑周期缩短",
+          "quality_risk": "薄壁化后刚性下降，需CAE验证；外观无影响区域可做",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计集成",
+          "direction": "多个独立塑料件集成为一个大型注塑件",
+          "expected_savings_pct": 20,
+          "mechanism": "减少装配工序和紧固件；减少工时和料废",
+          "quality_risk": "大件注塑变形风险增加；需CAE验证翘曲",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "仪表台",
+        "内饰",
+        "PP塑料",
+        "聚丙烯",
+        "软质注塑"
+      ]
+    },
+    {
+      "id": "PLAS-002",
+      "category": "塑料件",
+      "part_name": "前端模块框架",
+      "material": "PP-LGF30（长玻纤增强聚丙烯，30%玻纤）",
+      "typical_cost_per_kg": 22,
+      "typical_weight_kg": 4.8,
+      "typical_cost_per_unit": 106,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "PP-LGF30 → SMC片状模塑料（玻纤毡增强聚酯）",
+          "expected_savings_pct": 22,
+          "mechanism": "SMC材料成本远低于LGF；成型工艺简单",
+          "quality_risk": "SMC密度更高（1.8 vs 1.1），轻量化效果消失；质感差",
+          "feasibility": "中（注重成本而非轻量的项目）",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "PP-LGF30 → 骨架金属化（钢骨架+塑料包覆）",
+          "expected_savings_pct": 15,
+          "mechanism": "金属骨架保证结构刚度，塑料包覆减少用量；两者结合最优",
+          "quality_risk": "金属与塑料结合力需验证；防腐处理",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "前端模块",
+        "格栅框架",
+        "长玻纤",
+        "LGF",
+        "结构件"
+      ]
+    },
+    {
+      "id": "ELEC-001",
+      "category": "电子件",
+      "part_name": "BCM车身控制模块",
+      "material": "PCB板+A面壳体注塑件",
+      "typical_cost_per_unit": 320,
+      "vave_strategies": [
+        {
+          "strategy": "功能集成",
+          "direction": "将BCM与PEPS（无钥匙进入）集成为单一一级供应商模块",
+          "expected_savings_pct": 18,
+          "mechanism": "减少一个控制器硬件；减少线束和连接器；减少装配工时",
+          "quality_risk": "功能安全要求更高；软件集成复杂度增加",
+          "feasibility": "高",
+          "implementation_difficulty": "高",
+          "case_ref": "某自主车企将BCM+PEPS集成，年降采购成本约3000万元"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "从外资一级供应商切换至国内一级供应商",
+          "expected_savings_pct": 25,
+          "mechanism": "国内供应商成本结构更低（同性能产品）",
+          "quality_risk": "需做DV/PVE验证；软件适配工作量",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "BCM",
+        "车身控制模块",
+        "控制器",
+        "电子",
+        "PEPS"
+      ]
+    },
+    {
+      "id": "ELEC-002",
+      "category": "电子件",
+      "part_name": "大灯LED模组",
+      "material": "铝基板+LED芯片+光学透镜",
+      "typical_cost_per_unit": 580,
+      "vave_strategies": [
+        {
+          "strategy": "结构优化",
+          "direction": "从多芯片COB封装改为单芯片+透镜光学设计",
+          "expected_savings_pct": 14,
+          "mechanism": "减少LED芯片数量；简化散热设计",
+          "quality_risk": "需光学系统重新设计；光型需满足法规",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "铝基板 → 陶瓷基板（氮化铝陶瓷）",
+          "expected_savings_pct": -8,
+          "mechanism": "陶瓷基板散热更好，但成本更高；适合大功率LED",
+          "quality_risk": "适合大功率长寿命灯具",
+          "feasibility": "中",
+          "implementation_difficulty": "中",
+          "note": "此方向适合提升性能而非降本"
+        }
+      ],
+      "keywords": [
+        "大灯",
+        "LED模组",
+        "车灯",
+        "光学",
+        "LED"
+      ]
+    },
+    {
+      "id": "PIPE-001",
+      "category": "管路件",
+      "part_name": "制动油管总成",
+      "material": "尼龙11/12 多层管（PA11-PA66-PA11，三层结构）",
+      "typical_cost_per_meter": 18,
+      "typical_total_length_m": 12,
+      "typical_cost_per_unit": 216,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "尼龙11内层 → 尼龙12（成本低约15%）",
+          "expected_savings_pct": 10,
+          "mechanism": "PA12价格低于PA11约15%，耐燃油性相近",
+          "quality_risk": "需通过SAE认证的耐制动液测试；低温脆性需验证",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "多个自主车企已切换PA12制动管，降本约8%~12%"
+        },
+        {
+          "strategy": "设计优化",
+          "direction": "管路走向优化：减少弯头数量和总长度",
+          "expected_savings_pct": 8,
+          "mechanism": "减少管路总长度；减少管接头数量",
+          "quality_risk": "需重新布置管路走向；检查与周边件干涉",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "制动油管",
+        "制动系统",
+        "尼龙管",
+        "管路",
+        "制动"
+      ]
+    },
+    {
+      "id": "CHAS-001",
+      "category": "底盘件",
+      "part_name": "前副车架",
+      "material": "S355 钢板冲压拼焊（6~8个零件焊接）",
+      "typical_cost_per_kg": 12,
+      "typical_weight_kg": 28,
+      "typical_cost_per_unit": 336,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "多零件冲压+焊接 → 一体式液压成形",
+          "expected_savings_pct": 18,
+          "mechanism": "减少模具数量；减少焊接工序；材料利用率提升",
+          "quality_risk": "液压成形壁厚分布不均，局部减薄需CAE确认",
+          "feasibility": "高",
+          "implementation_difficulty": "高",
+          "case_ref": "某德系前副车架液压成形，零件从7个减至1个，降本22%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "S355钢板 →铝合金（6061-T6）挤压型材",
+          "expected_savings_pct": -5,
+          "mechanism": "铝合金减重30%，但成本增加约50%；适合轻量化项目",
+          "quality_risk": "不适合纯降本项目",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "note": "适合有碳排放积分政策优惠的项目"
+        }
+      ],
+      "keywords": [
+        "副车架",
+        "底盘",
+        "液压成形",
+        "冲压焊接",
+        "铝合金"
+      ]
+    },
+    {
+      "id": "CHAS-002",
+      "category": "底盘件",
+      "part_name": "控制臂",
+      "material": "锻造成本（C70S6高硫钢）",
+      "typical_cost_per_kg": 18,
+      "typical_weight_kg": 2.8,
+      "typical_cost_per_unit": 50,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "模锻 → 冲坯锻（减少材料去除量）",
+          "expected_savings_pct": 11,
+          "mechanism": "冲坯锻比模锻材料利用率高约10%~15%；减少机加量",
+          "quality_risk": "需重新做锻件成形工艺设计；锻模型式变化",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "C70S6钢锻 → 球墨铸铁（QT500-7）",
+          "expected_savings_pct": 20,
+          "mechanism": "球铁锻造成本低于钢锻；球铁铸造性能好",
+          "quality_risk": "疲劳性能需专项验证；强度比钢锻低15%左右",
+          "feasibility": "中（需CAE和试验验证后方可实施）",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "控制臂",
+        "悬挂",
+        "锻造",
+        "底盘件",
+        "铸铁"
+      ]
+    },
+    {
+      "id": "RUBB-001",
+      "category": "橡胶件",
+      "part_name": "发动机悬置软垫",
+      "material": "天然橡胶（NR）+金属骨架",
+      "typical_cost_per_unit": 85,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "天然橡胶 → EPDM（三元乙丙橡胶）",
+          "expected_savings_pct": 14,
+          "mechanism": "EPDM价格低于NR约10%；耐臭氧老化性能更好",
+          "quality_risk": "NR的阻尼特性优于EPDM，悬置隔振效果可能下降",
+          "feasibility": "中（需悬置性能重新匹配）",
+          "implementation_difficulty": "高"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "金属骨架从整体式改为拼接式（减少机加量）",
+          "expected_savings_pct": 9,
+          "mechanism": "拼接骨架模具简单，材料利用率高",
+          "quality_risk": "拼接焊接质量需保证；疲劳强度需验证",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "悬置软垫",
+        "发动机悬置",
+        "橡胶",
+        "减振",
+        "悬置系统"
+      ]
+    },
+    {
+      "id": "STAN-001",
+      "category": "标准件",
+      "part_name": "底盘紧固件（高强度螺栓M12）",
+      "material": "10.9级合金钢螺栓（含镀锌）",
+      "typical_cost_per_unit": 4.5,
+      "vave_strategies": [
+        {
+          "strategy": "标准化",
+          "direction": "非标螺栓改为国标/德标螺栓",
+          "expected_savings_pct": 35,
+          "mechanism": "标准螺栓批量采购成本低；减少专用模具分摊",
+          "quality_risk": "非标改标准需重新校核强度和疲劳",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "单一来源采购 → 三家比价或年降招标",
+          "expected_savings_pct": 12,
+          "mechanism": "充分竞争带来价格下降",
+          "quality_risk": "注意不同供应商的质量一致性；避免次品率上升",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "螺栓",
+        "紧固件",
+        "标准件",
+        "底盘",
+        "连接件"
+      ]
+    },
+    {
+      "id": "STAN-002",
+      "category": "标准件",
+      "part_name": "卡箍/箍带",
+      "material": "301不锈钢冲压件",
+      "typical_cost_per_unit": 2.8,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "301不锈钢 → 冷轧带钢（镀锌）",
+          "expected_savings_pct": 28,
+          "mechanism": "冷轧带钢材料成本约为不锈钢的1/3",
+          "quality_risk": "防腐能力下降；镀锌层划伤后可能生锈",
+          "feasibility": "高（内饰或低腐蚀环境）",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一卡箍规格（目前有5种规格统一为2种）",
+          "expected_savings_pct": 15,
+          "mechanism": "减少规格数量意味着单规格采购量增加，单价下降",
+          "quality_risk": "需确认每种应用场景的扭矩要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "卡箍",
+        "紧固件",
+        "不锈钢",
+        "带钢",
+        "标准件"
+      ]
+    },
+    {
+      "id": "TRANS-001",
+      "category": "传动件",
+      "part_name": "手动变速箱输入轴",
+      "material": "20CrMnTiH渗碳钢（锻件）",
+      "typical_cost_per_kg": 16,
+      "typical_weight_kg": 3.2,
+      "typical_cost_per_unit": 51,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "整体锻造 → 齿轮轴一体化锻造（减少材料+减少机加）",
+          "expected_savings_pct": 16,
+          "mechanism": "齿形直接锻造出来，减少大量车削和铣齿工序",
+          "quality_risk": "锻模复杂，成本高，需大批量才能分摊",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "20CrMnTiH → 碳氮共渗钢（减少热处理工序）",
+          "expected_savings_pct": 8,
+          "mechanism": "碳氮共渗时间短，热处理成本降低",
+          "quality_risk": "需确认渗层深度和表面硬度是否满足要求",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "变速箱轴",
+        "齿轮",
+        "传动轴",
+        "渗碳钢",
+        "锻造"
+      ]
+    },
+    {
+      "id": "BODY-001",
+      "category": "车身件",
+      "part_name": "顶盖横梁",
+      "material": "TRIP钢（980DP级）",
+      "typical_cost_per_kg": 10.5,
+      "typical_weight_kg": 5.5,
+      "typical_cost_per_unit": 58,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "TRIP980 → DP600（降强度等级）",
+          "expected_savings_pct": 15,
+          "mechanism": "DP600价格低于TRIP980约12%；性能降级后可减薄",
+          "quality_risk": "需CAE验证是否满足顶压法规；TRIP钢的成形性更好，换材后成形困难",
+          "feasibility": "中（需CAE和试验双重验证）",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "帽型截面改为U型截面（减少一道成形工序）",
+          "expected_savings_pct": 10,
+          "mechanism": "U型件模具简单，成形道次少",
+          "quality_risk": "U型截面扭转刚度低于帽型，需CAE验证",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "顶盖横梁",
+        "TRIP钢",
+        "DP钢",
+        "车身结构",
+        "高强钢"
+      ]
+    },
+    {
+      "id": "SEAL-001",
+      "category": "密封件",
+      "part_name": "车门密封条（EPDM发泡密实复合条）",
+      "material": "EPDM密实胶+EPDM发泡胶+骨架钢丝",
+      "typical_cost_per_meter": 22,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "EPDM → TPE（热塑性弹性体）",
+          "expected_savings_pct": 18,
+          "mechanism": "TPE加工为挤出成型，工艺比EPDM硫化简单，良率高",
+          "quality_risk": "TPE的耐候性和耐臭氧性略差于EPDM；长期老化性能需验证",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "日系车型较多采用TPE密封条，欧系以EPDM为主"
+        },
+        {
+          "strategy": "设计优化",
+          "direction": "多腔密封条改为单腔密封条（简化截面）",
+          "expected_savings_pct": 12,
+          "mechanism": "单腔条材料用量少，模具简单",
+          "quality_risk": "密封效果可能下降；需做气密性试验验证",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "密封条",
+        "EPDM",
+        "TPE",
+        "车门密封",
+        "密封件"
+      ]
+    },
+    {
+      "id": "STAMP-004",
+      "category": "冲压件",
+      "part_name": "背门内板",
+      "material": "DC04 冷轧钢板 厚度1.2mm",
+      "typical_cost_per_kg": 8.5,
+      "typical_weight_kg": 8.2,
+      "typical_cost_per_unit": 70,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压：在背门内板工艺废料区域嵌套小型产品零件",
+          "expected_savings_pct": 8.5,
+          "mechanism": "利用拉延工序产生的工艺废料（约占板料的21%）冲压小零件，材料利用率从53.6%提升至58.6%，单车降材料成本5.84元",
+          "quality_risk": "小零件表面质量受废料区域限制；嵌套关系影响背门内板成形；需协调两个零件的模具排布",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某轿车背门内板套裁，背面废料区嵌套加油口盖固定板，省去单独落料工序"
+        },
+        {
+          "strategy": "废料利用",
+          "direction": "将背门内板冲压废料用于生产同材质同料厚的小型加强件",
+          "expected_savings_pct": 5.0,
+          "mechanism": "废料区直接成形小件，无需额外材料采购；减少一道落料工序",
+          "quality_risk": "废料形状不规则，小件成形受限；表面划伤风险",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "背门内板",
+        "套裁",
+        "废料利用",
+        "材料利用率",
+        "覆盖件"
+      ]
+    },
+    {
+      "id": "STAMP-005",
+      "category": "冲压件",
+      "part_name": "天窗固定板",
+      "material": "DC03 深冲钢板 厚度1.0mm",
+      "typical_cost_per_kg": 9.0,
+      "typical_weight_kg": 3.5,
+      "typical_cost_per_unit": 31.5,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压：天窗固定板含大工艺孔，孔洞废料区域嵌套小型零件",
+          "expected_savings_pct": 12.0,
+          "mechanism": "天窗固定板通常有多个工艺减重孔，材料利用率仅约21%，通过套裁可将利用率提升至33%，单车节约材料成本4.99元",
+          "quality_risk": "天窗区域尺寸精度要求高；嵌套后背门内板的模具共用性下降",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某车型天窗固定板套裁工艺，材料利用率从21%提升至33%，单件降本4.99元"
+        }
+      ],
+      "keywords": [
+        "天窗固定板",
+        "套裁",
+        "工艺废料",
+        "材料利用率",
+        "顶盖区域"
+      ]
+    },
+    {
+      "id": "STAMP-006",
+      "category": "冲压件",
+      "part_name": "侧围外板（开卷落料工序）",
+      "material": "DC06 超深冲钢板 厚度0.8mm",
+      "typical_cost_per_kg": 10.5,
+      "typical_weight_kg": 22.0,
+      "typical_cost_per_unit": 231,
+      "vave_strategies": [
+        {
+          "strategy": "废料利用",
+          "direction": "侧围外板开卷落料产生的4片大尺寸废料，收集后用于生产小件",
+          "expected_savings_pct": 7.5,
+          "mechanism": "侧围单件面积大，落料废料可满足尾灯固定板、加油口盖等小件的全部材料需求，材料利用率达47.2%，单车节约材料成本8.4元",
+          "quality_risk": "废料收集需避免表面划伤（影响加油口盖等外观件）；需专用废料箱和物流路径",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "轿车侧围外板废料再利用项目，废料用于加油口盖、尾灯固定板，单车综合降本8.4元"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "从单独落料改为连续卷料冲压（减少料头料尾损耗）",
+          "expected_savings_pct": 3.0,
+          "mechanism": "单独落料每卷材料损耗约3-5%，连续冲压将损耗降低至1%以内",
+          "quality_risk": "需级进模或连续模；设备能力要求更高",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "侧围外板",
+        "废料利用",
+        "落料",
+        "卷料",
+        "外覆盖件"
+      ]
+    },
+    {
+      "id": "STAMP-007",
+      "category": "冲压件",
+      "part_name": "各类车身冲压件（高强钢内覆盖件）",
+      "material": "HC340/590DP 高强钢",
+      "typical_cost_per_kg": 9.8,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "HC340/590DP → 280VK 低屈服强度钢（降牌号）",
+          "expected_savings_pct": 8.0,
+          "mechanism": "280VK价格约4500元/吨，HC340/590DP约4900元/吨，降牌号后材料成本降低约8%，适用于对强度要求不高的车身内覆盖件",
+          "quality_risk": "抗凹性下降，需CAE验证；仅适用于非外观、非结构关键件",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某自主车企将10余种车身内覆盖件从HC340降为280VK，综合降本约8%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "镀锌板 → 非镀锌板（降低防腐处理成本）",
+          "expected_savings_pct": 5.0,
+          "mechanism": "镀锌板价格高于非镀锌板约10%，在车身不直接暴露区域（骨架、内加强件）可取消镀锌",
+          "quality_risk": "内饰侧腐蚀风险；需与涂装工艺协调",
+          "feasibility": "中",
+          "implementation_difficulty": "低",
+          "case_ref": "车身骨架内加强件取消镀锌，年降材料成本约5%"
+        }
+      ],
+      "keywords": [
+        "高强钢",
+        "材料降级",
+        "镀锌板",
+        "成本优化",
+        "车身覆盖件"
+      ]
+    },
+    {
+      "id": "STAMP-008",
+      "category": "冲压件",
+      "part_name": "车身内覆盖件（通用减薄）",
+      "material": "冷轧钢板 厚度1.0mm",
+      "typical_cost_per_kg": 8.0,
+      "vave_strategies": [
+        {
+          "strategy": "结构优化",
+          "direction": "料厚减薄：1.0mm → 0.9mm（减少材料用量10%）",
+          "expected_savings_pct": 10.0,
+          "mechanism": "料厚减少0.1mm，单件材料成本降低10%；重量同步减轻，整车轻量化有收益",
+          "quality_risk": "内覆盖件对刚度要求较低，减薄风险较小；但需验证与周边件的搭接边距",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某车型内板料厚统一减少0.1mm，无质量投诉，年降材料成本超百万元"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "料厚减薄：0.8mm → 0.7mm（适用于对强度要求较低的内装饰板）",
+          "expected_savings_pct": 12.5,
+          "mechanism": "再减薄0.1mm，材料成本再降12.5%（相对0.8mm基准）",
+          "quality_risk": "注意成形开裂风险；表面轻微划伤后生锈风险增加",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "料厚减薄",
+        "材料降本",
+        "轻量化",
+        "内覆盖件"
+      ]
+    },
+    {
+      "id": "STAMP-009",
+      "category": "冲压件",
+      "part_name": "加油口盖固定座",
+      "material": "DC03 冷轧钢板 厚度0.7mm",
+      "typical_cost_per_kg": 8.8,
+      "typical_weight_kg": 0.65,
+      "typical_cost_per_unit": 5.7,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "料形优化：方形板料改为弧形料（两侧弧形可共用排料）",
+          "expected_savings_pct": 18.3,
+          "mechanism": "方板料利用率71%→弧形料84%，利用弧形轮廓共边排料，减少料头损耗；单车节约材料成本4.99元（相对该件整体成本，降幅约18%）",
+          "quality_risk": "弧形料排样精度要求更高；剪板机下料尺寸精度差，优先用落料模",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某车型加油口盖固定座弧形料优化，材料利用率71%→84%"
+        }
+      ],
+      "keywords": [
+        "加油口盖",
+        "弧形落料",
+        "排样优化",
+        "材料利用率",
+        "小冲压件"
+      ]
+    },
+    {
+      "id": "STAMP-010",
+      "category": "冲压件",
+      "part_name": "左/右前门内窗台加强板",
+      "material": "440W 高强钢 厚度1.5mm",
+      "typical_cost_per_kg": 10.2,
+      "typical_weight_kg": 2.8,
+      "typical_cost_per_unit": 28.6,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "排样优化：方板料改为梯形料（对件成双生产）",
+          "expected_savings_pct": 16.9,
+          "mechanism": "零件前窄后宽，方板料料边损耗大；改梯形料后排样紧凑，材料利用率从39.6%提升至46.3%，单车降材料成本约4.8元",
+          "quality_risk": "梯形料需用落料模而非剪板机（保证尺寸精度）；440W高强钢回弹需补偿",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某车型左右前门内窗台加强板梯形排样，材料利用率从39.6%提升至46.3%"
+        }
+      ],
+      "keywords": [
+        "门内窗台加强板",
+        "梯形排样",
+        "成双生产",
+        "排样优化",
+        "高强钢"
+      ]
+    },
+    {
+      "id": "PLAS-003",
+      "category": "塑料件",
+      "part_name": "仪表台本体（内饰本体骨架，无喷涂化）",
+      "material": "PP+EPDM-TD20（聚丙烯+三元乙丙橡胶，20%含量）",
+      "typical_cost_per_kg": 14.0,
+      "typical_weight_kg": 6.5,
+      "typical_cost_per_unit": 91.0,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "无喷涂化：PP → ASA（丙烯腈-苯乙烯-丙烯酸酯共聚物）",
+          "expected_savings_pct": 12.0,
+          "mechanism": "ASA本身具有优异的耐候性（耐UV、耐热老化）和高光泽表面，无需喷涂即可满足外观要求；可省去单件约80-100元/m²的喷涂费用（以0.8m²仪表台计，降本约64-80元/件）；PP材料可回收",
+          "quality_risk": "ASA耐刮擦性不如喷涂PC/ABS；可通过加硬涂层或共挤ASA+ABS解决；成本略高于PP",
+          "feasibility": "高（内饰件）；中（外饰件）",
+          "implementation_difficulty": "中",
+          "case_ref": "日系某车型仪表台本体全面切换ASA，VOC测试通过，外观满足标准，批量降本约15%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "PP → PMMA（聚甲基丙烯酸甲酯）免喷涂高光材料",
+          "expected_savings_pct": 10.0,
+          "mechanism": "PMMA免喷涂高光粒子技术，一次注塑直接达到高光泽效果，省去喷涂工序；PMMA密度1.19，比PP(0.91)重，但喷涂工艺全取消",
+          "quality_risk": "PMMA脆性大，低温冲击性能差；可与PP共混（PMMA/PP合金）改善脆性",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "仪表台",
+        "免喷涂",
+        "ASA",
+        "PMMA",
+        "无喷涂",
+        "VOC",
+        "外观件"
+      ]
+    },
+    {
+      "id": "PLAS-004",
+      "category": "塑料件",
+      "part_name": "汽车外饰塑料件（通用：扰流板/裙边/拉手罩）",
+      "material": "PP+EPDM-T10 喷涂级",
+      "typical_cost_per_kg": 13.5,
+      "typical_weight_kg": 2.2,
+      "typical_cost_per_unit": 29.7,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "无喷涂化：PP → 免喷涂PP合金或TPO（热塑性聚烯烃弹性体）",
+          "expected_savings_pct": 15.0,
+          "mechanism": "免喷涂PP/TPO材料自带颜色和表面质感，无需喷漆；省去喷涂线投资和工艺成本；TPO耐候性优，成本低于喷涂PP约15-25%",
+          "quality_risk": "颜色一致性难以达到喷涂效果；色差控制困难（不同批次、不同模具区域）",
+          "feasibility": "中",
+          "implementation_difficulty": "中",
+          "case_ref": "部分自主车型外饰件已采用免喷涂方案，用于颜色一致性要求不高的部位"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "PP → PCM（预着色复合材料）",
+          "expected_savings_pct": 8.0,
+          "mechanism": "PCM在注塑前已着色，无需喷涂；材料成本与普通PP相近，但省去喷涂工序（节省80-120元/m²）",
+          "quality_risk": "颜色选择有限（仅标准色）；模具磨损略快",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "外饰件",
+        "免喷涂",
+        "TPO",
+        "PCM",
+        "预着色",
+        "扰流板"
+      ]
+    },
+    {
+      "id": "PLAS-005",
+      "category": "塑料件",
+      "part_name": "汽车进风格栅",
+      "material": "PP-GF30（30%玻纤增强聚丙烯）喷涂级",
+      "typical_cost_per_kg": 16.5,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 29.7,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "无喷涂化：PP-GF30 → PP-GF20（降低玻纤含量）或PP-TD20（滑石粉填充PP）",
+          "expected_savings_pct": 18.0,
+          "mechanism": "进风格栅一般不外露（装配在中网内侧），外观要求低；可采用低成本PP-TD20（滑石粉填充）或PP-GF20（低玻纤含量），省去喷涂+电镀工艺；省去单件喷涂成本约30-50元",
+          "quality_risk": "需确认格栅区域是否可见；取消电镀后防腐能力需涂装保证",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某自主车型进风格栅从PP-GF30喷涂改为PP-TD20免喷涂，降本约18%"
+        }
+      ],
+      "keywords": [
+        "进风格栅",
+        "免喷涂",
+        "PP",
+        "格栅",
+        "内饰骨架"
+      ]
+    },
+    {
+      "id": "PLAS-006",
+      "category": "塑料件",
+      "part_name": "塑料前端模块（通用结构件）",
+      "material": "PP-LGF30（长玻纤增强聚丙烯）",
+      "typical_cost_per_kg": 22.0,
+      "typical_weight_kg": 4.8,
+      "typical_cost_per_unit": 106.0,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "PP-LGF30 → 滑石粉/碳酸钙填充PP（PP-TD20或PP-CC30）",
+          "expected_savings_pct": 30.0,
+          "mechanism": "PP-CC30（30%碳酸钙填充）价格约为PP-LGF30的50-60%；碳酸钙来源广、成本低；PP本身可回收，环保性好",
+          "quality_risk": "刚度下降明显（尤其高温条件下）；需CAE验证结构强度；仅适用于非结构承载区域",
+          "feasibility": "中",
+          "implementation_difficulty": "低",
+          "case_ref": "前端模块骨架内侧非可见区域用PP-TD20替代LGF30，降本约30%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "PP-LGF30 → PP+Talc（滑石粉填充PP）局部增强方案",
+          "expected_savings_pct": 20.0,
+          "mechanism": "主体采用PP-TD20降低成本，局部受力区域用金属嵌件补强；综合成本低于全LGF30方案",
+          "quality_risk": "嵌件与PP结合力；嵌件位置精度；总成装配干涉",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某自主车企前端模块骨架混合材料方案，综合降本约20%"
+        }
+      ],
+      "keywords": [
+        "前端模块",
+        "长玻纤PP",
+        "滑石粉填充",
+        "碳酸钙填充",
+        "结构件"
+      ]
+    },
+    {
+      "id": "PLAS-007",
+      "category": "塑料件",
+      "part_name": "注塑件通用降本策略",
+      "material": "各类注塑PP",
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "高价位工程塑料 → 普通PP+填料（CaCO3/Talc）",
+          "expected_savings_pct": 20.0,
+          "mechanism": "在非结构/非外观区域，碳酸钙填充PP或滑石粉填充PP可将材料成本降低20-35%；填料添加量30-40%时物理性能尚可接受",
+          "quality_risk": "冲击强度下降；填充量大时VOC/气味增加；需改性处理降低气味",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "内饰骨架/卡扣等非外观件广泛采用PP-CC25/PP-TD20方案"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "薄壁化：常规壁厚3.2mm → 2.2-2.5mm",
+          "expected_savings_pct": 15.0,
+          "mechanism": "壁厚减少20-30%，直接减少材料用量；薄壁化还缩短注塑周期10-15%，提升产能",
+          "quality_risk": "变形风险增加（尤其是深腔件）；需优化浇口设计和冷却系统",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "日系车型内饰薄壁化已将壁厚统一降至2.0-2.5mm，综合降本15-20%"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "发泡注塑：实心→化学发泡或物理发泡",
+          "expected_savings_pct": 12.0,
+          "mechanism": "发泡后壁厚可增加20-30%（保持同等刚度），但实际材料用量减少15-25%；密度降低15-25%",
+          "quality_risk": "表面质量差（皮层+发泡层）；外观件不适用；模具改造",
+          "feasibility": "中（内饰非可见区域）",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "注塑件",
+        "薄壁化",
+        "填料PP",
+        "发泡注塑",
+        "通用"
+      ]
+    },
+    {
+      "id": "PLAS-008",
+      "category": "塑料件",
+      "part_name": "汽车翼子板（外覆盖件）",
+      "material": "PP+EPDM-T10 喷涂件",
+      "typical_cost_per_kg": 13.5,
+      "typical_weight_kg": 3.2,
+      "typical_cost_per_unit": 43.2,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "喷涂PP → 免喷涂ASA或PMMA/ASA合金",
+          "expected_savings_pct": 15.0,
+          "mechanism": "翼子板传统工艺：PP注塑→底漆→色漆→清漆；免喷涂方案省去喷涂三涂层（约150-200元/m²），单车降本约60-80元（按0.5m²计）；同时PP可回收，减少废料",
+          "quality_risk": "色差控制是最大挑战（不同批次模具区域）；免喷涂翼子板市场案例仍较少",
+          "feasibility": "中（质保团队接受度是关键）",
+          "implementation_difficulty": "高（需通过外观质量评审）",
+          "case_ref": "豪华品牌部分车型已采用免喷涂ASA翼子板；普通品牌谨慎评估"
+        }
+      ],
+      "keywords": [
+        "翼子板",
+        "外覆盖件",
+        "免喷涂",
+        "ASA",
+        "喷涂降本"
+      ]
+    },
+    {
+      "id": "STAMP-011",
+      "category": "冲压件",
+      "part_name": "背门内板（套裁冲压）",
+      "material": "DC56 冷轧钢板（厚度0.7mm）",
+      "typical_cost_per_kg": 7.8,
+      "typical_weight_kg": 8.5,
+      "typical_cost_per_unit": 66,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压工艺：将小型同材质零件嵌套在背门内板的功能孔/减重孔废料区域，一起冲压成型",
+          "expected_savings_pct": 10,
+          "mechanism": "顶盖天窗固定板等小件嵌套在背门内板孔洞区域同步冲压，利用原本被切掉的废料区域，材料利用率由53.6%提升至58.6%",
+          "quality_risk": "需确认嵌套零件的成形性及与主件的分离工艺，避免切边工序影响嵌套件质量",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某轿车背门内板采用套裁冲压工艺，节约材料成本5.84元/车；天窗固定板材料利用率由21%提升至33%，节约4.99元/车（《锻造与冲压》2018）"
+        }
+      ],
+      "keywords": [
+        "背门内板",
+        "套裁冲压",
+        "材料利用率",
+        "减重孔",
+        "废料利用",
+        "冲压工艺"
+      ]
+    },
+    {
+      "id": "STAMP-012",
+      "category": "冲压件",
+      "part_name": "侧围外板（废料回收小件）",
+      "material": "DC06 深冲冷轧钢板（厚度0.8mm）",
+      "typical_cost_per_kg": 8.2,
+      "typical_weight_kg": 15.0,
+      "typical_cost_per_unit": 123,
+      "vave_strategies": [
+        {
+          "strategy": "材料利用率提升",
+          "direction": "废料回收利用：侧围外板落料工序产生的4片大废料，收集后用于生产尾灯固定板、加油口盖等小件",
+          "expected_savings_pct": 7,
+          "mechanism": "将原本报废的大块余料收集，用于生产同材质同料厚的小型冲压件，材料利用率达到47.2%",
+          "quality_risk": "有表面品质要求的零件（如加油口盖），废料收集过程需避免表面划痕",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某轿车侧围外板废料回收，节约材料成本8.4元/车（《锻造与冲压》2018）"
+        }
+      ],
+      "keywords": [
+        "侧围外板",
+        "废料利用",
+        "落料",
+        "加油口盖",
+        "尾灯固定板",
+        "材料利用率"
+      ]
+    },
+    {
+      "id": "STAMP-013",
+      "category": "冲压件",
+      "part_name": "前门内窗台加强板（排样优化）",
+      "material": "440W 高强钢（厚度1.5mm）",
+      "typical_cost_per_kg": 9.5,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 17.1,
+      "vave_strategies": [
+        {
+          "strategy": "料片形状优化",
+          "direction": "方板料→梯形料：根据零件对件成双时前窄后宽的形状特点，将生产板料从方板料改为梯形料",
+          "expected_savings_pct": 17,
+          "mechanism": "梯形料更贴合零件展开形状，减少单边余料浪费，材料利用率从39.6%提升至46.29%；优先落料模下料保证尺寸精度",
+          "quality_risk": "高强钢(440W)梯形料若用剪板机下料尺寸精度差，需落料模保证精度；注意板料波动影响零件形面尺寸稳定性",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某轿车左/右前门内窗台加强板方板料改梯形料，材料利用率提升6.69个百分点"
+        },
+        {
+          "strategy": "落料排样优化",
+          "direction": "齿形交错排列：改变原有横切板料单体落料方式，采用连续落料+齿形交错排列",
+          "expected_savings_pct": 8,
+          "mechanism": "连续落料减少单边余料，齿形交错排列进一步利用板料间隙；常规单体落料利用率60.35%，连续落料61.15%，齿形交错68.39%",
+          "quality_risk": "需考虑板料纤维方向对零件性能的影响",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "冲压产线落料排样优化，材料利用率由60.35%提升至68.39%（提高8.04个百分点）"
+        }
+      ],
+      "keywords": [
+        "加强板",
+        "前门内窗台",
+        "排样优化",
+        "梯形料",
+        "材料利用率",
+        "高强钢"
+      ]
+    },
+    {
+      "id": "CAST-003",
+      "category": "压铸件",
+      "part_name": "后底板总成（一体化压铸）",
+      "material": "铝合金（Al-Si系压铸合金）",
+      "typical_cost_per_kg": 32,
+      "typical_weight_kg": 25,
+      "typical_cost_per_unit": 800,
+      "vave_strategies": [
+        {
+          "strategy": "工艺革命：一体化压铸",
+          "direction": "将原本约370-400个冲压焊接散件集成为一个大型铝合金压铸件，一次压铸成型",
+          "expected_savings_pct": 40,
+          "mechanism": "巨型压力机(6000-9000吨)一次压铸成型，取消多道冲压+焊接工序；简化供应链，减少模具套数，生产效率大幅提升；材料回收利用再降低成本",
+          "quality_risk": "大型铸件缺陷修复困难，可能需重新铸造；压铸模具设计和制造难度极高；需验证碰撞安全性能",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "特斯拉Model Y后底板采用一体压铸，约400个零件集成为1个，整车重量降>10%，制造成本降40%（特斯拉上海超级工厂，2023）"
+        },
+        {
+          "strategy": "轻量化设计",
+          "direction": "零件数量从数百个减少为1个，结构集成化设计",
+          "expected_savings_pct": 10,
+          "mechanism": "集成化设计消除焊接法兰/搭接边，减少冗余材料；总重量节省>10%，续航提升约14%",
+          "quality_risk": "碰撞能量管理需重新验证；维修经济性差（小损伤需换总成）",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "一体化压铸",
+        "后底板",
+        "特斯拉",
+        "Gigacasting",
+        "铝合金",
+        "轻量化",
+        "压铸件"
+      ]
+    },
+    {
+      "id": "PLAS-009",
+      "category": "塑料件",
+      "part_name": "BC柱装饰件（高光免喷涂）",
+      "material": "改性PP/PC/PMMA/ASA合金",
+      "typical_cost_per_kg": 28,
+      "typical_weight_kg": 0.35,
+      "typical_cost_per_unit": 9.8,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+工艺取消",
+          "direction": "PC/ABS喷漆→高光免喷涂PC/ASA/PMMA合金一次注塑成型",
+          "expected_savings_pct": 35,
+          "mechanism": "取消喷漆工序：消除喷漆不良率（缩孔/橘纹/颗粒等）+节省喷漆人工设备+缩短生产周期（注塑一次完成，无需二次喷涂）",
+          "quality_risk": "免喷涂外观品质对模具表面要求极高；耐刮擦性和耐候性需验证；颜色一致性控制难度稍大",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某车型BC柱装饰件：PC/ASA/PMMA高光免喷涂方案替代PC/ABS+喷漆方案，年节省成本约2000万元（知乎行业案例）"
+        }
+      ],
+      "keywords": [
+        "BC柱",
+        "装饰件",
+        "免喷涂",
+        "高光",
+        "PC/ASA/PMMA",
+        "以塑代钢",
+        "内饰件"
+      ]
+    },
+    {
+      "id": "PLAS-010",
+      "category": "塑料件",
+      "part_name": "变速箱侧盖（PA6以塑代铝）",
+      "material": "PA6（聚酰胺6，玻璃纤维增强）",
+      "typical_cost_per_kg": 45,
+      "typical_weight_kg": 0.6,
+      "typical_cost_per_unit": 27,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "铝合金压铸→PA6玻纤增强注塑成型",
+          "expected_savings_pct": 25,
+          "mechanism": "塑料注塑相对压铸能耗低、周期短；减少后加工工序（机加工/去毛刺）；单件减重约40%",
+          "quality_risk": "需验证高温高湿环境下的尺寸稳定性和机械强度；油液接触相容性测试；密封性验证",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "朗盛(朗盛化学)与河北天健龙维合作开发PA6变速箱侧盖，以塑代铝实现约40%减重（搜料网2022）"
+        }
+      ],
+      "keywords": [
+        "变速箱侧盖",
+        "PA6",
+        "以塑代铝",
+        "朗盛",
+        "轻量化",
+        "注塑件"
+      ]
+    },
+    {
+      "id": "CHAS-003",
+      "category": "底盘件",
+      "part_name": "前副车架（铝合金铸件代替钢制冲焊）",
+      "material": "ZL114A-T6 铸造铝合金 / AlSi7Mg",
+      "typical_cost_per_kg": 38,
+      "typical_weight_kg": 11.8,
+      "typical_cost_per_unit": 448,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+结构优化",
+          "direction": "钢制冲焊副车架→铝合金低压/高压铸造一体成型副车架",
+          "expected_savings_pct": 15,
+          "mechanism": "铝合金密度仅为钢材1/3，通过底部增加盖板形成封闭腔结构+优化肋板设计保证强度；从17kg降至11.76kg（减重30.8%）；铸造一体成型减少焊接和组装工序",
+          "quality_risk": "铸造缺陷（气孔/缩松）需严控；有限元分析必须重新校核强度/刚度/模态；疲劳耐久试验和耐腐蚀试验必须通过",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "铝合金副车架替代铸铁/钢制副车架：Porsche Panamera由30个钢件集成为1个铝铸件重16kg；传祺轿车实现铝合金压铸后副车架批量生产"
+        }
+      ],
+      "keywords": [
+        "副车架",
+        "铝合金",
+        "低压铸造",
+        "轻量化",
+        "底盘件",
+        "以铝代钢"
+      ]
+    },
+    {
+      "id": "ELEC-003",
+      "category": "电子件",
+      "part_name": "整车线束（顶棚线束合并）",
+      "material": "铜导线+连接器+护套",
+      "typical_cost_per_kg": 85,
+      "typical_weight_kg": 12,
+      "typical_cost_per_unit": 1020,
+      "vave_strategies": [
+        {
+          "strategy": "结构集成",
+          "direction": "顶棚线束与车身线束合二为一，取消独立顶棚线束",
+          "expected_savings_pct": 2,
+          "mechanism": "取消独立顶棚线束物料和工装，减少两对inline对接连接器，零部件数量减少1个，工装成本降低约3万元，装配工序简化",
+          "quality_risk": "需确认集成后线束的固定和路径无干涉；顶棚功能件供电稳定性验证",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某车型VAVE优化：顶棚线束集成到车身线束，成本减少16元/台，质量减少0.1kg/台，工装成本降低约3万元"
+        },
+        {
+          "strategy": "架构优化",
+          "direction": "高压电气架构优化：减少高压线束长度",
+          "expected_savings_pct": 41,
+          "mechanism": "高压线束从22m降至9m（-59%），质量从13.5kg降至4.8kg（-64%），通过电器件集成减少连接器和线束分支数量",
+          "quality_risk": "高压安全间距必须保证；热管理需重新校核",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某电动车项目高压电气架构优化，高压线束成本下降41%"
+        }
+      ],
+      "keywords": [
+        "线束",
+        "顶棚线束",
+        "车身线束",
+        "集成",
+        "高压线束",
+        "架构优化"
+      ]
+    },
+    {
+      "id": "ELEC-004",
+      "category": "电子件",
+      "part_name": "48V电池线束（铝导线代铜）",
+      "material": "铝导线（50mm²）",
+      "typical_cost_per_kg": 42,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 75.6,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "35mm²铜导线→50mm²铝导线",
+          "expected_savings_pct": 40,
+          "mechanism": "同等阻抗条件下铝导线重量更小、材料成本更低（铝约42元/kg vs 铜约85元/kg）；50mm²铝导线代替35mm²铜导线，长度4m，减重896g",
+          "quality_risk": "铝导线导电率低于铜（约61%IACS），需增大截面积保证载流量；铝的接触电阻和电化腐蚀问题需可靠端子处理；抗疲劳性能低于铜",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "某项目48V电池线束：50mm²铝导线替代35mm²铜导线，长度约4m，减重896g，降成本约30元（搜狐汽车线束降成本文）"
+        }
+      ],
+      "keywords": [
+        "铝导线",
+        "轻量化",
+        "48V线束",
+        "材料替换",
+        "降本",
+        "线束"
+      ]
+    },
+    {
+      "id": "BODY-002",
+      "category": "车身件",
+      "part_name": "新能源汽车电池仓盖板（碳纤复合材料）",
+      "material": "碳纤维增强高性能复合材料（PA/CF）",
+      "typical_cost_per_kg": 95,
+      "typical_weight_kg": 3.5,
+      "typical_cost_per_unit": 332.5,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+工艺优化",
+          "direction": "铝制电池仓盖板→碳纤增强高性能复合材料一体化注塑成型",
+          "expected_savings_pct": 20,
+          "mechanism": "复合材料密度远低于铝合金，重量减轻37%；一体精密注塑减少多零件装配工序和模具数量；CAE优化设计释放底盘空间11%",
+          "quality_risk": "碳纤复合材料成本较高（95元/kg vs 铝合金38元/kg）；碰撞后修复困难；高温环境下材料性能稳定性需验证",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "翔空科技为客户开发的新能源汽车电池仓碳纤复合材料盖板，相比第一代铝制方案减重37%，释放底盘空间11%（搜狐2024）"
+        }
+      ],
+      "keywords": [
+        "电池仓盖板",
+        "碳纤维",
+        "复合材料",
+        "以塑代铝",
+        "轻量化",
+        "新能源汽车"
+      ]
+    },
+    {
+      "id": "STAMP-014",
+      "category": "冲压件",
+      "part_name": "背门内板（套裁冲压）",
+      "material": "DC56 冷轧钢板（厚度0.7mm）",
+      "typical_cost_per_kg": 7.8,
+      "typical_weight_kg": 8.5,
+      "typical_cost_per_unit": 66,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压工艺：将小型同材质零件嵌套在背门内板的功能孔/减重孔废料区域，一起冲压成型",
+          "expected_savings_pct": 10,
+          "mechanism": "顶盖天窗固定板等小件嵌套在背门内板孔洞区域同步冲压，利用原本被切掉的废料区域，材料利用率由53.6%提升至58.6%",
+          "quality_risk": "需确认嵌套零件的成形性及与主件的分离工艺，避免切边工序影响嵌套件质量",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某轿车背门内板采用套裁冲压工艺，节约材料成本5.84元/车；天窗固定板材料利用率由21%提升至33%，节约4.99元/车（《锻造与冲压》2018）"
+        }
+      ],
+      "keywords": [
+        "背门内板",
+        "套裁冲压",
+        "材料利用率",
+        "减重孔",
+        "废料利用",
+        "冲压工艺"
+      ]
+    },
+    {
+      "id": "STAMP-015",
+      "category": "冲压件",
+      "part_name": "侧围外板（废料回收小件）",
+      "material": "DC06 深冲冷轧钢板（厚度0.8mm）",
+      "typical_cost_per_kg": 8.2,
+      "typical_weight_kg": 15.0,
+      "typical_cost_per_unit": 123,
+      "vave_strategies": [
+        {
+          "strategy": "材料利用率提升",
+          "direction": "废料回收利用：侧围外板落料工序产生的4片大废料，收集后用于生产尾灯固定板、加油口盖等小件",
+          "expected_savings_pct": 7,
+          "mechanism": "将原本报废的大块余料收集，用于生产同材质同料厚的小型冲压件，材料利用率达到47.2%",
+          "quality_risk": "有表面品质要求的零件（如加油口盖），废料收集过程需避免表面划痕",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某轿车侧围外板废料回收，节约材料成本8.4元/车（《锻造与冲压》2018）"
+        }
+      ],
+      "keywords": [
+        "侧围外板",
+        "废料利用",
+        "落料",
+        "加油口盖",
+        "尾灯固定板",
+        "材料利用率"
+      ]
+    },
+    {
+      "id": "STAMP-016",
+      "category": "冲压件",
+      "part_name": "前门内窗台加强板（排样优化）",
+      "material": "440W 高强钢（厚度1.5mm）",
+      "typical_cost_per_kg": 9.5,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 17.1,
+      "vave_strategies": [
+        {
+          "strategy": "料片形状优化",
+          "direction": "方板料→梯形料：根据零件对件成双时前窄后宽的形状特点，将生产板料从方板料改为梯形料",
+          "expected_savings_pct": 17,
+          "mechanism": "梯形料更贴合零件展开形状，减少单边余料浪费，材料利用率从39.6%提升至46.29%；优先落料模下料保证尺寸精度",
+          "quality_risk": "高强钢(440W)梯形料若用剪板机下料尺寸精度差，需落料模保证精度；注意板料波动影响零件形面尺寸稳定性",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某轿车左/右前门内窗台加强板方板料改梯形料，材料利用率提升6.69个百分点"
+        },
+        {
+          "strategy": "落料排样优化",
+          "direction": "齿形交错排列：改变原有横切板料单体落料方式，采用连续落料+齿形交错排列",
+          "expected_savings_pct": 8,
+          "mechanism": "连续落料减少单边余料，齿形交错排列进一步利用板料间隙；常规单体落料利用率60.35%，连续落料61.15%，齿形交错68.39%",
+          "quality_risk": "需考虑板料纤维方向对零件性能的影响",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "冲压产线落料排样优化，材料利用率由60.35%提升至68.39%（提高8.04个百分点）"
+        }
+      ],
+      "keywords": [
+        "加强板",
+        "前门内窗台",
+        "排样优化",
+        "梯形料",
+        "材料利用率",
+        "高强钢"
+      ]
+    },
+    {
+      "id": "CAST-004",
+      "category": "压铸件",
+      "part_name": "后底板总成（一体化压铸）",
+      "material": "铝合金（Al-Si系压铸合金）",
+      "typical_cost_per_kg": 32,
+      "typical_weight_kg": 25,
+      "typical_cost_per_unit": 800,
+      "vave_strategies": [
+        {
+          "strategy": "工艺革命：一体化压铸",
+          "direction": "将原本约370-400个冲压焊接散件集成为一个大型铝合金压铸件，一次压铸成型",
+          "expected_savings_pct": 40,
+          "mechanism": "巨型压力机(6000-9000吨)一次压铸成型，取消多道冲压+焊接工序；简化供应链，减少模具套数，生产效率大幅提升；材料回收利用再降低成本",
+          "quality_risk": "大型铸件缺陷修复困难，可能需重新铸造；压铸模具设计和制造难度极高；需验证碰撞安全性能",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "特斯拉Model Y后底板采用一体压铸，约400个零件集成为1个，整车重量降>10%，制造成本降40%（特斯拉上海超级工厂，2023）"
+        },
+        {
+          "strategy": "轻量化设计",
+          "direction": "零件数量从数百个减少为1个，结构集成化设计",
+          "expected_savings_pct": 10,
+          "mechanism": "集成化设计消除焊接法兰/搭接边，减少冗余材料；总重量节省>10%，续航提升约14%",
+          "quality_risk": "碰撞能量管理需重新验证；维修经济性差（小损伤需换总成）",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "一体化压铸",
+        "后底板",
+        "特斯拉",
+        "Gigacasting",
+        "铝合金",
+        "轻量化",
+        "压铸件"
+      ]
+    },
+    {
+      "id": "PLAS-011",
+      "category": "塑料件",
+      "part_name": "BC柱装饰件（高光免喷涂）",
+      "material": "改性PP/PC/PMMA/ASA合金",
+      "typical_cost_per_kg": 28,
+      "typical_weight_kg": 0.35,
+      "typical_cost_per_unit": 9.8,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+工艺取消",
+          "direction": "PC/ABS喷漆→高光免喷涂PC/ASA/PMMA合金一次注塑成型",
+          "expected_savings_pct": 35,
+          "mechanism": "取消喷漆工序：消除喷漆不良率（缩孔/橘纹/颗粒等）+节省喷漆人工设备+缩短生产周期（注塑一次完成，无需二次喷涂）",
+          "quality_risk": "免喷涂外观品质对模具表面要求极高；耐刮擦性和耐候性需验证；颜色一致性控制难度稍大",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某车型BC柱装饰件：PC/ASA/PMMA高光免喷涂方案替代PC/ABS+喷漆方案，年节省成本约2000万元（知乎行业案例）"
+        }
+      ],
+      "keywords": [
+        "BC柱",
+        "装饰件",
+        "免喷涂",
+        "高光",
+        "PC/ASA/PMMA",
+        "以塑代钢",
+        "内饰件"
+      ]
+    },
+    {
+      "id": "PLAS-012",
+      "category": "塑料件",
+      "part_name": "变速箱侧盖（PA6以塑代铝）",
+      "material": "PA6（聚酰胺6，玻璃纤维增强）",
+      "typical_cost_per_kg": 45,
+      "typical_weight_kg": 0.6,
+      "typical_cost_per_unit": 27,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "铝合金压铸→PA6玻纤增强注塑成型",
+          "expected_savings_pct": 25,
+          "mechanism": "塑料注塑相对压铸能耗低、周期短；减少后加工工序（机加工/去毛刺）；单件减重约40%",
+          "quality_risk": "需验证高温高湿环境下的尺寸稳定性和机械强度；油液接触相容性测试；密封性验证",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "朗盛(朗盛化学)与河北天健龙维合作开发PA6变速箱侧盖，以塑代铝实现约40%减重（搜料网2022）"
+        }
+      ],
+      "keywords": [
+        "变速箱侧盖",
+        "PA6",
+        "以塑代铝",
+        "朗盛",
+        "轻量化",
+        "注塑件"
+      ]
+    },
+    {
+      "id": "CHAS-003",
+      "category": "底盘件",
+      "part_name": "前副车架（铝合金铸件代替钢制冲焊）",
+      "material": "ZL114A-T6 铸造铝合金 / AlSi7Mg",
+      "typical_cost_per_kg": 38,
+      "typical_weight_kg": 11.8,
+      "typical_cost_per_unit": 448,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+结构优化",
+          "direction": "钢制冲焊副车架→铝合金低压/高压铸造一体成型副车架",
+          "expected_savings_pct": 15,
+          "mechanism": "铝合金密度仅为钢材1/3，通过底部增加盖板形成封闭腔结构+优化肋板设计保证强度；从17kg降至11.76kg（减重30.8%）；铸造一体成型减少焊接和组装工序",
+          "quality_risk": "铸造缺陷（气孔/缩松）需严控；有限元分析必须重新校核强度/刚度/模态；疲劳耐久试验和耐腐蚀试验必须通过",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "铝合金副车架替代铸铁/钢制副车架：Porsche Panamera由30个钢件集成为1个铝铸件重16kg；传祺轿车实现铝合金压铸后副车架批量生产"
+        }
+      ],
+      "keywords": [
+        "副车架",
+        "铝合金",
+        "低压铸造",
+        "轻量化",
+        "底盘件",
+        "以铝代钢"
+      ]
+    },
+    {
+      "id": "ELEC-003",
+      "category": "电子件",
+      "part_name": "整车线束（顶棚线束合并）",
+      "material": "铜导线+连接器+护套",
+      "typical_cost_per_kg": 85,
+      "typical_weight_kg": 12,
+      "typical_cost_per_unit": 1020,
+      "vave_strategies": [
+        {
+          "strategy": "结构集成",
+          "direction": "顶棚线束与车身线束合二为一，取消独立顶棚线束",
+          "expected_savings_pct": 2,
+          "mechanism": "取消独立顶棚线束物料和工装，减少两对inline对接连接器，零部件数量减少1个，工装成本降低约3万元，装配工序简化",
+          "quality_risk": "需确认集成后线束的固定和路径无干涉；顶棚功能件供电稳定性验证",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "某车型VAVE优化：顶棚线束集成到车身线束，成本减少16元/台，质量减少0.1kg/台，工装成本降低约3万元"
+        },
+        {
+          "strategy": "架构优化",
+          "direction": "高压电气架构优化：减少高压线束长度",
+          "expected_savings_pct": 41,
+          "mechanism": "高压线束从22m降至9m（-59%），质量从13.5kg降至4.8kg（-64%），通过电器件集成减少连接器和线束分支数量",
+          "quality_risk": "高压安全间距必须保证；热管理需重新校核",
+          "feasibility": "高",
+          "implementation_difficulty": "中等",
+          "case_ref": "某电动车项目高压电气架构优化，高压线束成本下降41%"
+        }
+      ],
+      "keywords": [
+        "线束",
+        "顶棚线束",
+        "车身线束",
+        "集成",
+        "高压线束",
+        "架构优化"
+      ]
+    },
+    {
+      "id": "ELEC-004",
+      "category": "电子件",
+      "part_name": "48V电池线束（铝导线代铜）",
+      "material": "铝导线（50mm²）",
+      "typical_cost_per_kg": 42,
+      "typical_weight_kg": 1.8,
+      "typical_cost_per_unit": 75.6,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "35mm²铜导线→50mm²铝导线",
+          "expected_savings_pct": 40,
+          "mechanism": "同等阻抗条件下铝导线重量更小、材料成本更低（铝约42元/kg vs 铜约85元/kg）；50mm²铝导线代替35mm²铜导线，长度4m，减重896g",
+          "quality_risk": "铝导线导电率低于铜（约61%IACS），需增大截面积保证载流量；铝的接触电阻和电化腐蚀问题需可靠端子处理；抗疲劳性能低于铜",
+          "feasibility": "中",
+          "implementation_difficulty": "中等",
+          "case_ref": "某项目48V电池线束：50mm²铝导线替代35mm²铜导线，长度约4m，减重896g，降成本约30元（搜狐汽车线束降成本文）"
+        }
+      ],
+      "keywords": [
+        "铝导线",
+        "轻量化",
+        "48V线束",
+        "材料替换",
+        "降本",
+        "线束"
+      ]
+    },
+    {
+      "id": "BODY-002",
+      "category": "车身件",
+      "part_name": "新能源汽车电池仓盖板（碳纤复合材料）",
+      "material": "碳纤维增强高性能复合材料（PA/CF）",
+      "typical_cost_per_kg": 95,
+      "typical_weight_kg": 3.5,
+      "typical_cost_per_unit": 332.5,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换+工艺优化",
+          "direction": "铝制电池仓盖板→碳纤增强高性能复合材料一体化注塑成型",
+          "expected_savings_pct": 20,
+          "mechanism": "复合材料密度远低于铝合金，重量减轻37%；一体精密注塑减少多零件装配工序和模具数量；CAE优化设计释放底盘空间11%",
+          "quality_risk": "碳纤复合材料成本较高（95元/kg vs 铝合金38元/kg）；碰撞后修复困难；高温环境下材料性能稳定性需验证",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "翔空科技为客户开发的新能源汽车电池仓碳纤复合材料盖板，相比第一代铝制方案减重37%，释放底盘空间11%（搜狐2024）"
+        }
+      ],
+      "keywords": [
+        "电池仓盖板",
+        "碳纤维",
+        "复合材料",
+        "以塑代铝",
+        "轻量化",
+        "新能源汽车"
+      ]
+    },
+    {
+      "id": "MACH-003",
+      "category": "机加件",
+      "part_name": "传动轴",
+      "material": "45号钢（调质处理）",
+      "typical_cost_per_kg": 16,
+      "typical_weight_kg": 8.5,
+      "typical_cost_per_unit": 136,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "整体锻造→摩擦焊拼接（减少材料浪费）",
+          "expected_savings_pct": 18,
+          "mechanism": "传统整体锻造材料利用率仅45%，摩擦焊拼接可提升至70%以上，减少切削余量",
+          "quality_risk": "焊接接头需100%探伤检测；动平衡需重新校核",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某商用车传动轴改摩擦焊拼接，材料利用率从45%提升至72%，降本22%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "45号钢→40Cr合金结构钢",
+          "expected_savings_pct": 8,
+          "mechanism": "40Cr强度更高，可减薄轴径，减重10%的同时降低材料成本",
+          "quality_risk": "需重新做扭转疲劳试验；热处理工艺变更需验证",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "空心轴设计（内孔加工）",
+          "expected_savings_pct": 12,
+          "mechanism": "传动轴中心区域应力较小，空心化可减重15-20%，材料成本下降",
+          "quality_risk": "空心轴动平衡要求更高；内孔加工增加工序",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "传动轴",
+        "机加",
+        "锻造",
+        "摩擦焊",
+        "空心轴"
+      ]
+    },
+    {
+      "id": "MACH-004",
+      "category": "机加件",
+      "part_name": "变速箱齿轮",
+      "material": "20CrMnTi渗碳钢",
+      "typical_cost_per_kg": 18,
+      "typical_weight_kg": 1.2,
+      "typical_cost_per_unit": 22,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "滚齿→精锻齿形（减少切削量）",
+          "expected_savings_pct": 25,
+          "mechanism": "精锻齿形材料利用率从45%提升至85%，减少后续磨齿工序",
+          "quality_risk": "精锻模具寿命短（约3000件），大批量才合算；齿轮精度需后续精磨",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "大批量齿轮（年产>5万件）适用精锻，小批量仍用传统滚齿"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "20CrMnTi→20CrMo（成本更低）",
+          "expected_savings_pct": 6,
+          "mechanism": "20CrMo价格略低于20CrMnTi，性能相近",
+          "quality_risk": "需重新做接触疲劳试验；材料认证周期长",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "热处理优化",
+          "direction": "渗碳淬火→碳氮共渗（缩短工艺时间）",
+          "expected_savings_pct": 10,
+          "mechanism": "碳氮共渗时间缩短30%，能耗降低，热处理成本下降",
+          "quality_risk": "渗层深度和硬度需重新验证；齿面耐磨性需台架试验",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "齿轮",
+        "变速箱",
+        "渗碳钢",
+        "精锻",
+        "热处理"
+      ]
+    },
+    {
+      "id": "MACH-005",
+      "category": "机加件",
+      "part_name": "轴承盖",
+      "material": "HT250灰铸铁",
+      "typical_cost_per_kg": 12,
+      "typical_weight_kg": 2.8,
+      "typical_cost_per_unit": 34,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "HT250灰铸铁→QT450球墨铸铁",
+          "expected_savings_pct": 5,
+          "mechanism": "球铁强度更高，可减薄壁厚，整体重量下降",
+          "quality_risk": "球铁铸造工艺略复杂，成本差异小；需验证密封性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减重孔设计（非受力区域挖孔）",
+          "expected_savings_pct": 8,
+          "mechanism": "轴承盖非受力区域减重，材料用量减少",
+          "quality_risk": "CAE仿真需验证刚度是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "铸造→粉末冶金",
+          "expected_savings_pct": 15,
+          "mechanism": "粉末冶金近净成形，材料利用率>95%，减少机加工序",
+          "quality_risk": "粉末冶金件孔隙率影响密封性；大批量才合算",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "轴承盖",
+        "灰铸铁",
+        "球墨铸铁",
+        "粉末冶金",
+        "减重孔"
+      ]
+    },
+    {
+      "id": "STAN-003",
+      "category": "标准件",
+      "part_name": "弹簧垫圈",
+      "material": "65Mn弹簧钢",
+      "typical_cost_per_unit": 0.15,
+      "vave_strategies": [
+        {
+          "strategy": "设计标准化",
+          "direction": "统一规格（从8种规格减至3种）",
+          "expected_savings_pct": 20,
+          "mechanism": "减少规格数量提升单规格采购量，批量折扣增加",
+          "quality_risk": "需确认每种应用场景的防松要求是否满足",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "65Mn弹簧钢→不锈钢304（防腐环境）",
+          "expected_savings_pct": -5,
+          "mechanism": "不锈钢成本更高，但可取消后续镀锌处理",
+          "quality_risk": "仅适用于有防腐要求的环境，一般工况不推荐",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "本地化采购（取消远距离供应商）",
+          "expected_savings_pct": 12,
+          "mechanism": "减少物流成本，缩短供货周期",
+          "quality_risk": "需验证新供应商质量一致性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "弹簧垫圈",
+        "标准件",
+        "防松",
+        "规格统一",
+        "采购优化"
+      ]
+    },
+    {
+      "id": "STAN-004",
+      "category": "标准件",
+      "part_name": "自攻螺钉",
+      "material": "碳钢镀锌",
+      "typical_cost_per_unit": 0.08,
+      "vave_strategies": [
+        {
+          "strategy": "设计标准化",
+          "direction": "统一螺纹规格（从M4/M5/M6减至M5一种）",
+          "expected_savings_pct": 25,
+          "mechanism": "减少规格意味着单规格采购量翻倍，单价下降",
+          "quality_risk": "需确认M5螺钉在所有应用场景的强度是否足够",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "材料优化",
+          "direction": "取消镀锌层（内饰非腐蚀环境）",
+          "expected_savings_pct": 15,
+          "mechanism": "内饰环境无腐蚀风险，可取消镀锌降低成本",
+          "quality_risk": "需确认使用环境无潮湿/腐蚀气体",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商整合",
+          "direction": "从5家供应商减至2家",
+          "expected_savings_pct": 10,
+          "mechanism": "集中采购量获得更好价格",
+          "quality_risk": "需建立备选供应商以防断供",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "自攻螺钉",
+        "标准件",
+        "镀锌",
+        "供应商整合",
+        "内饰件"
+      ]
+    },
+    {
+      "id": "STAN-005",
+      "category": "标准件",
+      "part_name": "橡胶减震垫",
+      "material": "天然橡胶NR",
+      "typical_cost_per_unit": 12,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "天然橡胶NR→三元乙丙橡胶EPDM",
+          "expected_savings_pct": 18,
+          "mechanism": "EPDM价格低于NR约15%，耐臭氧老化性能更好",
+          "quality_risk": "NR的阻尼特性优于EPDM，减震效果可能下降",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一尺寸规格（从12种减至4种）",
+          "expected_savings_pct": 22,
+          "mechanism": "减少模具数量，提升单规格产量",
+          "quality_risk": "需验证各应用场景的承载和减震要求",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "模压成型→注压成型（提高生产效率）",
+          "expected_savings_pct": 12,
+          "mechanism": "注压成型周期短，良率高，适合大批量生产",
+          "quality_risk": "小批量不适用，设备投资大",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "减震垫",
+        "橡胶",
+        "标准件",
+        "EPDM",
+        "注压成型"
+      ]
+    },
+    {
+      "id": "TRANS-002",
+      "category": "传动件",
+      "part_name": "等速万向节（CV节）",
+      "material": "GCr15轴承钢",
+      "typical_cost_per_kg": 22,
+      "typical_weight_kg": 1.5,
+      "typical_cost_per_unit": 33,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "锻造→冷挤压（减少切削量）",
+          "expected_savings_pct": 20,
+          "mechanism": "冷挤压材料利用率从50%提升至85%，减少机加工序",
+          "quality_risk": "冷挤压件表面硬度需后续热处理；模具寿命需监控",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某日系车型CV节冷挤压项目，降本18%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "GCr15轴承钢→20CrMnTi渗碳钢",
+          "expected_savings_pct": 8,
+          "mechanism": "渗碳钢价格低于轴承钢，通过渗碳淬火达到同等硬度",
+          "quality_risk": "需重新做接触疲劳试验",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "优化滚道设计（减少摩擦）",
+          "expected_savings_pct": 5,
+          "mechanism": "优化滚道曲率，减少钢球数量，降低材料成本",
+          "quality_risk": "需验证NVH和耐久性",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "等速万向节",
+        "CV节",
+        "传动件",
+        "冷挤压",
+        "轴承钢"
+      ]
+    },
+    {
+      "id": "TRANS-003",
+      "category": "传动件",
+      "part_name": "传动轴花键轴",
+      "material": "40Cr调质钢",
+      "typical_cost_per_kg": 17,
+      "typical_weight_kg": 4.2,
+      "typical_cost_per_unit": 71,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "滚齿加工→冷滚花键（减少切削）",
+          "expected_savings_pct": 22,
+          "mechanism": "冷滚花键材料利用率高，生产效率提升3倍",
+          "quality_risk": "花键精度需后续精整；冷滚模具寿命有限",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "材料优化",
+          "direction": "40Cr→35CrMo（性能相当成本更低）",
+          "expected_savings_pct": 6,
+          "mechanism": "35CrMo价格略低，调质后性能相近",
+          "quality_risk": "需验证扭转疲劳性能",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "空心轴设计（减轻重量）",
+          "expected_savings_pct": 15,
+          "mechanism": "空心化减重20%，材料成本下降",
+          "quality_risk": "内孔加工增加工序；动平衡要求提高",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "花键轴",
+        "传动轴",
+        "冷滚",
+        "空心轴",
+        "调质钢"
+      ]
+    },
+    {
+      "id": "PIPE-002",
+      "category": "管路件",
+      "part_name": "燃油管路",
+      "material": "尼龙12多层管（PA12-PA66-PA12）",
+      "typical_cost_per_meter": 25,
+      "typical_total_length_m": 8,
+      "typical_cost_per_unit": 200,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "尼龙12→尼龙11（成本降低约10%）",
+          "expected_savings_pct": 12,
+          "mechanism": "PA11价格低于PA12，耐燃油性相近",
+          "quality_risk": "需通过耐燃油测试和低温脆性测试",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "多个自主车企已切换PA11燃油管，降本约10%"
+        },
+        {
+          "strategy": "设计优化",
+          "direction": "优化管路走向（减少弯头和接头）",
+          "expected_savings_pct": 8,
+          "mechanism": "减少管接头数量，降低成本和泄漏风险",
+          "quality_risk": "需重新布置管路走向，检查干涉",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "取消防护套（非磨损区域）",
+          "expected_savings_pct": 6,
+          "mechanism": "仅在磨损风险区域保留防护套",
+          "quality_risk": "需确认无摩擦区域",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "燃油管路",
+        "尼龙管",
+        "管接头",
+        "PA11",
+        "PA12"
+      ]
+    },
+    {
+      "id": "PIPE-003",
+      "category": "管路件",
+      "part_name": "空调制冷剂管",
+      "material": "铝管+橡胶软管",
+      "typical_cost_per_meter": 35,
+      "typical_total_length_m": 5,
+      "typical_cost_per_unit": 175,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "铝管→塑料管（非高压区域）",
+          "expected_savings_pct": 15,
+          "mechanism": "低压区域可用PA管替代铝管，减重且降本",
+          "quality_risk": "需验证耐压和耐制冷剂性能",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减少接头数量（集成化设计）",
+          "expected_savings_pct": 10,
+          "mechanism": "减少泄漏点，降低装配成本",
+          "quality_risk": "需验证集成后维修便利性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "橡胶软管→TPV热塑性硫化胶",
+          "expected_savings_pct": 12,
+          "mechanism": "TPV可回收再利用，加工效率高",
+          "quality_risk": "TPV耐制冷剂性能需验证",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "空调管",
+        "制冷剂管",
+        "铝管",
+        "TPV",
+        "管路优化"
+      ]
+    },
+    {
+      "id": "RUBB-002",
+      "category": "橡胶件",
+      "part_name": "悬架衬套",
+      "material": "天然橡胶NR+金属骨架",
+      "typical_cost_per_unit": 45,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "天然橡胶NR→聚氨酯PU",
+          "expected_savings_pct": 10,
+          "mechanism": "PU耐磨性和抗老化性能更好，寿命延长",
+          "quality_risk": "PU硬度高，NVH性能可能下降",
+          "feasibility": "中",
+          "implementation_difficulty": "中",
+          "case_ref": "运动型车型常用PU衬套提升操控性"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减少金属骨架材料（优化设计）",
+          "expected_savings_pct": 8,
+          "mechanism": "CAE优化骨架厚度，减重降本",
+          "quality_risk": "需验证疲劳耐久性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "硫化工艺优化（缩短周期）",
+          "expected_savings_pct": 6,
+          "mechanism": "优化硫化温度和时间，提高生产效率",
+          "quality_risk": "需验证硫化质量稳定性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "悬架衬套",
+        "橡胶件",
+        "聚氨酯",
+        "NVH",
+        "硫化"
+      ]
+    },
+    {
+      "id": "RUBB-003",
+      "category": "橡胶件",
+      "part_name": "发动机舱密封条",
+      "material": "EPDM海绵胶+密实胶",
+      "typical_cost_per_meter": 28,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "EPDM→TPE热塑性弹性体",
+          "expected_savings_pct": 18,
+          "mechanism": "TPE加工效率高，可回收再利用，成本更低",
+          "quality_risk": "TPE耐候性略差于EPDM，需长期老化测试",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "简化截面形状（减少材料用量）",
+          "expected_savings_pct": 12,
+          "mechanism": "优化密封条截面，减少非必要材料",
+          "quality_risk": "需验证密封效果是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "连续挤出→注射成型（小件）",
+          "expected_savings_pct": 8,
+          "mechanism": "小批量复杂截面适合注射成型",
+          "quality_risk": "大批量仍应优先用挤出工艺",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "密封条",
+        "EPDM",
+        "TPE",
+        "发动机舱",
+        "挤出成型"
+      ]
+    },
+    {
+      "id": "SEAL-002",
+      "category": "密封件",
+      "part_name": "油封",
+      "material": "丁腈橡胶NBR+金属骨架",
+      "typical_cost_per_unit": 18,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "丁腈橡胶NBR→氟橡胶FKM（高温环境）",
+          "expected_savings_pct": -10,
+          "mechanism": "FKM耐高温性能更好，但成本更高",
+          "quality_risk": "仅适用于高温环境，一般工况不推荐",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "取消金属骨架（塑料替代）",
+          "expected_savings_pct": 15,
+          "mechanism": "塑料骨架成本低于金属骨架",
+          "quality_risk": "需验证骨架强度是否满足装配要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一油封规格（从15种减至6种）",
+          "expected_savings_pct": 20,
+          "mechanism": "减少规格数量，提升批量采购折扣",
+          "quality_risk": "需验证各应用场景的密封性能",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "油封",
+        "密封件",
+        "丁腈橡胶",
+        "氟橡胶",
+        "规格统一"
+      ]
+    },
+    {
+      "id": "SEAL-003",
+      "category": "密封件",
+      "part_name": "O型密封圈",
+      "material": "丁腈橡胶NBR",
+      "typical_cost_per_unit": 0.5,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "NBR→硅橡胶VMQ（高温环境）",
+          "expected_savings_pct": -20,
+          "mechanism": "硅橡胶耐高温，但成本更高",
+          "quality_risk": "仅适用于高温环境，一般工况用NBR即可",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一O型圈规格（从30种减至12种）",
+          "expected_savings_pct": 25,
+          "mechanism": "减少规格数量，大幅提升单规格采购量",
+          "quality_risk": "需确认各应用工况兼容性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "从进口品牌切换国产",
+          "expected_savings_pct": 30,
+          "mechanism": "国产O型圈质量已达标，价格更低",
+          "quality_risk": "需验证耐介质性能和寿命",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "O型圈",
+        "密封圈",
+        "标准化",
+        "国产化",
+        "丁腈橡胶"
+      ]
+    },
+    {
+      "id": "BODY-003",
+      "category": "车身件",
+      "part_name": "A柱内板",
+      "material": "TRIP780相变诱导塑性钢",
+      "typical_cost_per_kg": 11,
+      "typical_weight_kg": 4.8,
+      "typical_cost_per_unit": 53,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "TRIP780→DP600（降牌号）",
+          "expected_savings_pct": 12,
+          "mechanism": "DP600价格低于TRIP780约10%，在非关键区域可降级",
+          "quality_risk": "需CAE验证侧碰和顶压性能",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "优化加强筋布置（减少材料）",
+          "expected_savings_pct": 8,
+          "mechanism": "拓扑优化减少非必要材料",
+          "quality_risk": "需CAE验证刚度是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "激光拼焊（不同厚度材料组合）",
+          "expected_savings_pct": 10,
+          "mechanism": "关键区域厚料，非关键区域薄料，降低整体材料成本",
+          "quality_risk": "拼焊焊缝质量需控制",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "A柱",
+        "车身件",
+        "TRIP钢",
+        "DP钢",
+        "激光拼焊"
+      ]
+    },
+    {
+      "id": "BODY-004",
+      "category": "车身件",
+      "part_name": "后侧围内板",
+      "material": "DC04冷轧钢板 厚度0.8mm",
+      "typical_cost_per_kg": 8.5,
+      "typical_weight_kg": 6.2,
+      "typical_cost_per_unit": 53,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "DC04→DC03（降牌号）",
+          "expected_savings_pct": 8,
+          "mechanism": "内板成形复杂度低，可用DC03替代DC04",
+          "quality_risk": "需验证成形是否开裂",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减重孔设计（非受力区域）",
+          "expected_savings_pct": 6,
+          "mechanism": "非受力区域开减重孔，减少材料用量",
+          "quality_risk": "需CAE验证刚度",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压（废料利用）",
+          "expected_savings_pct": 10,
+          "mechanism": "在废料区域嵌套小件，提升材料利用率",
+          "quality_risk": "需确认嵌套件成形性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "后侧围",
+        "车身件",
+        "冷轧钢",
+        "减重孔",
+        "套裁"
+      ]
+    },
+    {
+      "id": "MACH-003",
+      "category": "机加件",
+      "part_name": "传动轴",
+      "material": "45号钢（调质处理）",
+      "typical_cost_per_kg": 16,
+      "typical_weight_kg": 8.5,
+      "typical_cost_per_unit": 136,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "整体锻造→摩擦焊拼接（减少材料浪费）",
+          "expected_savings_pct": 18,
+          "mechanism": "传统整体锻造材料利用率仅45%，摩擦焊拼接可提升至70%以上，减少切削余量",
+          "quality_risk": "焊接接头需100%探伤检测；动平衡需重新校核",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某商用车传动轴改摩擦焊拼接，材料利用率从45%提升至72%，降本22%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "45号钢→40Cr合金结构钢",
+          "expected_savings_pct": 8,
+          "mechanism": "40Cr强度更高，可减薄轴径，减重10%的同时降低材料成本",
+          "quality_risk": "需重新做扭转疲劳试验；热处理工艺变更需验证",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "空心轴设计（内孔加工）",
+          "expected_savings_pct": 12,
+          "mechanism": "传动轴中心区域应力较小，空心化可减重15-20%，材料成本下降",
+          "quality_risk": "空心轴动平衡要求更高；内孔加工增加工序",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "传动轴",
+        "机加",
+        "锻造",
+        "摩擦焊",
+        "空心轴"
+      ]
+    },
+    {
+      "id": "MACH-004",
+      "category": "机加件",
+      "part_name": "变速箱齿轮",
+      "material": "20CrMnTi渗碳钢",
+      "typical_cost_per_kg": 18,
+      "typical_weight_kg": 1.2,
+      "typical_cost_per_unit": 22,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "滚齿→精锻齿形（减少切削量）",
+          "expected_savings_pct": 25,
+          "mechanism": "精锻齿形材料利用率从45%提升至85%，减少后续磨齿工序",
+          "quality_risk": "精锻模具寿命短（约3000件），大批量才合算；齿轮精度需后续精磨",
+          "feasibility": "中",
+          "implementation_difficulty": "高",
+          "case_ref": "大批量齿轮（年产>5万件）适用精锻，小批量仍用传统滚齿"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "20CrMnTi→20CrMo（成本更低）",
+          "expected_savings_pct": 6,
+          "mechanism": "20CrMo价格略低于20CrMnTi，性能相近",
+          "quality_risk": "需重新做接触疲劳试验；材料认证周期长",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "热处理优化",
+          "direction": "渗碳淬火→碳氮共渗（缩短工艺时间）",
+          "expected_savings_pct": 10,
+          "mechanism": "碳氮共渗时间缩短30%，能耗降低，热处理成本下降",
+          "quality_risk": "渗层深度和硬度需重新验证；齿面耐磨性需台架试验",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "齿轮",
+        "变速箱",
+        "渗碳钢",
+        "精锻",
+        "热处理"
+      ]
+    },
+    {
+      "id": "MACH-005",
+      "category": "机加件",
+      "part_name": "轴承盖",
+      "material": "HT250灰铸铁",
+      "typical_cost_per_kg": 12,
+      "typical_weight_kg": 2.8,
+      "typical_cost_per_unit": 34,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "HT250灰铸铁→QT450球墨铸铁",
+          "expected_savings_pct": 5,
+          "mechanism": "球铁强度更高，可减薄壁厚，整体重量下降",
+          "quality_risk": "球铁铸造工艺略复杂，成本差异小；需验证密封性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减重孔设计（非受力区域挖孔）",
+          "expected_savings_pct": 8,
+          "mechanism": "轴承盖非受力区域减重，材料用量减少",
+          "quality_risk": "CAE仿真需验证刚度是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "铸造→粉末冶金",
+          "expected_savings_pct": 15,
+          "mechanism": "粉末冶金近净成形，材料利用率>95%，减少机加工序",
+          "quality_risk": "粉末冶金件孔隙率影响密封性；大批量才合算",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "轴承盖",
+        "灰铸铁",
+        "球墨铸铁",
+        "粉末冶金",
+        "减重孔"
+      ]
+    },
+    {
+      "id": "STAN-003",
+      "category": "标准件",
+      "part_name": "弹簧垫圈",
+      "material": "65Mn弹簧钢",
+      "typical_cost_per_unit": 0.15,
+      "vave_strategies": [
+        {
+          "strategy": "设计标准化",
+          "direction": "统一规格（从8种规格减至3种）",
+          "expected_savings_pct": 20,
+          "mechanism": "减少规格数量提升单规格采购量，批量折扣增加",
+          "quality_risk": "需确认每种应用场景的防松要求是否满足",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "65Mn弹簧钢→不锈钢304（防腐环境）",
+          "expected_savings_pct": -5,
+          "mechanism": "不锈钢成本更高，但可取消后续镀锌处理",
+          "quality_risk": "仅适用于有防腐要求的环境，一般工况不推荐",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "本地化采购（取消远距离供应商）",
+          "expected_savings_pct": 12,
+          "mechanism": "减少物流成本，缩短供货周期",
+          "quality_risk": "需验证新供应商质量一致性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "弹簧垫圈",
+        "标准件",
+        "防松",
+        "规格统一",
+        "采购优化"
+      ]
+    },
+    {
+      "id": "STAN-004",
+      "category": "标准件",
+      "part_name": "自攻螺钉",
+      "material": "碳钢镀锌",
+      "typical_cost_per_unit": 0.08,
+      "vave_strategies": [
+        {
+          "strategy": "设计标准化",
+          "direction": "统一螺纹规格（从M4/M5/M6减至M5一种）",
+          "expected_savings_pct": 25,
+          "mechanism": "减少规格意味着单规格采购量翻倍，单价下降",
+          "quality_risk": "需确认M5螺钉在所有应用场景的强度是否足够",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "材料优化",
+          "direction": "取消镀锌层（内饰非腐蚀环境）",
+          "expected_savings_pct": 15,
+          "mechanism": "内饰环境无腐蚀风险，可取消镀锌降低成本",
+          "quality_risk": "需确认使用环境无潮湿/腐蚀气体",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商整合",
+          "direction": "从5家供应商减至2家",
+          "expected_savings_pct": 10,
+          "mechanism": "集中采购量获得更好价格",
+          "quality_risk": "需建立备选供应商以防断供",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "自攻螺钉",
+        "标准件",
+        "镀锌",
+        "供应商整合",
+        "内饰件"
+      ]
+    },
+    {
+      "id": "STAN-005",
+      "category": "标准件",
+      "part_name": "橡胶减震垫",
+      "material": "天然橡胶NR",
+      "typical_cost_per_unit": 12,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "天然橡胶NR→三元乙丙橡胶EPDM",
+          "expected_savings_pct": 18,
+          "mechanism": "EPDM价格低于NR约15%，耐臭氧老化性能更好",
+          "quality_risk": "NR的阻尼特性优于EPDM，减震效果可能下降",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一尺寸规格（从12种减至4种）",
+          "expected_savings_pct": 22,
+          "mechanism": "减少模具数量，提升单规格产量",
+          "quality_risk": "需验证各应用场景的承载和减震要求",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "模压成型→注压成型（提高生产效率）",
+          "expected_savings_pct": 12,
+          "mechanism": "注压成型周期短，良率高，适合大批量生产",
+          "quality_risk": "小批量不适用，设备投资大",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "减震垫",
+        "橡胶",
+        "标准件",
+        "EPDM",
+        "注压成型"
+      ]
+    },
+    {
+      "id": "TRANS-002",
+      "category": "传动件",
+      "part_name": "等速万向节（CV节）",
+      "material": "GCr15轴承钢",
+      "typical_cost_per_kg": 22,
+      "typical_weight_kg": 1.5,
+      "typical_cost_per_unit": 33,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "锻造→冷挤压（减少切削量）",
+          "expected_savings_pct": 20,
+          "mechanism": "冷挤压材料利用率从50%提升至85%，减少机加工序",
+          "quality_risk": "冷挤压件表面硬度需后续热处理；模具寿命需监控",
+          "feasibility": "高",
+          "implementation_difficulty": "中",
+          "case_ref": "某日系车型CV节冷挤压项目，降本18%"
+        },
+        {
+          "strategy": "材料替换",
+          "direction": "GCr15轴承钢→20CrMnTi渗碳钢",
+          "expected_savings_pct": 8,
+          "mechanism": "渗碳钢价格低于轴承钢，通过渗碳淬火达到同等硬度",
+          "quality_risk": "需重新做接触疲劳试验",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "优化滚道设计（减少摩擦）",
+          "expected_savings_pct": 5,
+          "mechanism": "优化滚道曲率，减少钢球数量，降低材料成本",
+          "quality_risk": "需验证NVH和耐久性",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "等速万向节",
+        "CV节",
+        "传动件",
+        "冷挤压",
+        "轴承钢"
+      ]
+    },
+    {
+      "id": "TRANS-003",
+      "category": "传动件",
+      "part_name": "传动轴花键轴",
+      "material": "40Cr调质钢",
+      "typical_cost_per_kg": 17,
+      "typical_weight_kg": 4.2,
+      "typical_cost_per_unit": 71,
+      "vave_strategies": [
+        {
+          "strategy": "工艺优化",
+          "direction": "滚齿加工→冷滚花键（减少切削）",
+          "expected_savings_pct": 22,
+          "mechanism": "冷滚花键材料利用率高，生产效率提升3倍",
+          "quality_risk": "花键精度需后续精整；冷滚模具寿命有限",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "材料优化",
+          "direction": "40Cr→35CrMo（性能相当成本更低）",
+          "expected_savings_pct": 6,
+          "mechanism": "35CrMo价格略低，调质后性能相近",
+          "quality_risk": "需验证扭转疲劳性能",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "空心轴设计（减轻重量）",
+          "expected_savings_pct": 15,
+          "mechanism": "空心化减重20%，材料成本下降",
+          "quality_risk": "内孔加工增加工序；动平衡要求提高",
+          "feasibility": "中",
+          "implementation_difficulty": "高"
+        }
+      ],
+      "keywords": [
+        "花键轴",
+        "传动轴",
+        "冷滚",
+        "空心轴",
+        "调质钢"
+      ]
+    },
+    {
+      "id": "PIPE-002",
+      "category": "管路件",
+      "part_name": "燃油管路",
+      "material": "尼龙12多层管（PA12-PA66-PA12）",
+      "typical_cost_per_meter": 25,
+      "typical_total_length_m": 8,
+      "typical_cost_per_unit": 200,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "尼龙12→尼龙11（成本降低约10%）",
+          "expected_savings_pct": 12,
+          "mechanism": "PA11价格低于PA12，耐燃油性相近",
+          "quality_risk": "需通过耐燃油测试和低温脆性测试",
+          "feasibility": "高",
+          "implementation_difficulty": "低",
+          "case_ref": "多个自主车企已切换PA11燃油管，降本约10%"
+        },
+        {
+          "strategy": "设计优化",
+          "direction": "优化管路走向（减少弯头和接头）",
+          "expected_savings_pct": 8,
+          "mechanism": "减少管接头数量，降低成本和泄漏风险",
+          "quality_risk": "需重新布置管路走向，检查干涉",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "取消防护套（非磨损区域）",
+          "expected_savings_pct": 6,
+          "mechanism": "仅在磨损风险区域保留防护套",
+          "quality_risk": "需确认无摩擦区域",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "燃油管路",
+        "尼龙管",
+        "管接头",
+        "PA11",
+        "PA12"
+      ]
+    },
+    {
+      "id": "PIPE-003",
+      "category": "管路件",
+      "part_name": "空调制冷剂管",
+      "material": "铝管+橡胶软管",
+      "typical_cost_per_meter": 35,
+      "typical_total_length_m": 5,
+      "typical_cost_per_unit": 175,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "铝管→塑料管（非高压区域）",
+          "expected_savings_pct": 15,
+          "mechanism": "低压区域可用PA管替代铝管，减重且降本",
+          "quality_risk": "需验证耐压和耐制冷剂性能",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减少接头数量（集成化设计）",
+          "expected_savings_pct": 10,
+          "mechanism": "减少泄漏点，降低装配成本",
+          "quality_risk": "需验证集成后维修便利性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "橡胶软管→TPV热塑性硫化胶",
+          "expected_savings_pct": 12,
+          "mechanism": "TPV可回收再利用，加工效率高",
+          "quality_risk": "TPV耐制冷剂性能需验证",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "空调管",
+        "制冷剂管",
+        "铝管",
+        "TPV",
+        "管路优化"
+      ]
+    },
+    {
+      "id": "RUBB-002",
+      "category": "橡胶件",
+      "part_name": "悬架衬套",
+      "material": "天然橡胶NR+金属骨架",
+      "typical_cost_per_unit": 45,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "天然橡胶NR→聚氨酯PU",
+          "expected_savings_pct": 10,
+          "mechanism": "PU耐磨性和抗老化性能更好，寿命延长",
+          "quality_risk": "PU硬度高，NVH性能可能下降",
+          "feasibility": "中",
+          "implementation_difficulty": "中",
+          "case_ref": "运动型车型常用PU衬套提升操控性"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减少金属骨架材料（优化设计）",
+          "expected_savings_pct": 8,
+          "mechanism": "CAE优化骨架厚度，减重降本",
+          "quality_risk": "需验证疲劳耐久性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "硫化工艺优化（缩短周期）",
+          "expected_savings_pct": 6,
+          "mechanism": "优化硫化温度和时间，提高生产效率",
+          "quality_risk": "需验证硫化质量稳定性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "悬架衬套",
+        "橡胶件",
+        "聚氨酯",
+        "NVH",
+        "硫化"
+      ]
+    },
+    {
+      "id": "RUBB-003",
+      "category": "橡胶件",
+      "part_name": "发动机舱密封条",
+      "material": "EPDM海绵胶+密实胶",
+      "typical_cost_per_meter": 28,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "EPDM→TPE热塑性弹性体",
+          "expected_savings_pct": 18,
+          "mechanism": "TPE加工效率高，可回收再利用，成本更低",
+          "quality_risk": "TPE耐候性略差于EPDM，需长期老化测试",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "简化截面形状（减少材料用量）",
+          "expected_savings_pct": 12,
+          "mechanism": "优化密封条截面，减少非必要材料",
+          "quality_risk": "需验证密封效果是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "连续挤出→注射成型（小件）",
+          "expected_savings_pct": 8,
+          "mechanism": "小批量复杂截面适合注射成型",
+          "quality_risk": "大批量仍应优先用挤出工艺",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "密封条",
+        "EPDM",
+        "TPE",
+        "发动机舱",
+        "挤出成型"
+      ]
+    },
+    {
+      "id": "SEAL-002",
+      "category": "密封件",
+      "part_name": "油封",
+      "material": "丁腈橡胶NBR+金属骨架",
+      "typical_cost_per_unit": 18,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "丁腈橡胶NBR→氟橡胶FKM（高温环境）",
+          "expected_savings_pct": -10,
+          "mechanism": "FKM耐高温性能更好，但成本更高",
+          "quality_risk": "仅适用于高温环境，一般工况不推荐",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "取消金属骨架（塑料替代）",
+          "expected_savings_pct": 15,
+          "mechanism": "塑料骨架成本低于金属骨架",
+          "quality_risk": "需验证骨架强度是否满足装配要求",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一油封规格（从15种减至6种）",
+          "expected_savings_pct": 20,
+          "mechanism": "减少规格数量，提升批量采购折扣",
+          "quality_risk": "需验证各应用场景的密封性能",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "油封",
+        "密封件",
+        "丁腈橡胶",
+        "氟橡胶",
+        "规格统一"
+      ]
+    },
+    {
+      "id": "SEAL-003",
+      "category": "密封件",
+      "part_name": "O型密封圈",
+      "material": "丁腈橡胶NBR",
+      "typical_cost_per_unit": 0.5,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "NBR→硅橡胶VMQ（高温环境）",
+          "expected_savings_pct": -20,
+          "mechanism": "硅橡胶耐高温，但成本更高",
+          "quality_risk": "仅适用于高温环境，一般工况用NBR即可",
+          "feasibility": "中",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "设计标准化",
+          "direction": "统一O型圈规格（从30种减至12种）",
+          "expected_savings_pct": 25,
+          "mechanism": "减少规格数量，大幅提升单规格采购量",
+          "quality_risk": "需确认各应用工况兼容性",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "从进口品牌切换国产",
+          "expected_savings_pct": 30,
+          "mechanism": "国产O型圈质量已达标，价格更低",
+          "quality_risk": "需验证耐介质性能和寿命",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        }
+      ],
+      "keywords": [
+        "O型圈",
+        "密封圈",
+        "标准化",
+        "国产化",
+        "丁腈橡胶"
+      ]
+    },
+    {
+      "id": "BODY-003",
+      "category": "车身件",
+      "part_name": "A柱内板",
+      "material": "TRIP780相变诱导塑性钢",
+      "typical_cost_per_kg": 11,
+      "typical_weight_kg": 4.8,
+      "typical_cost_per_unit": 53,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "TRIP780→DP600（降牌号）",
+          "expected_savings_pct": 12,
+          "mechanism": "DP600价格低于TRIP780约10%，在非关键区域可降级",
+          "quality_risk": "需CAE验证侧碰和顶压性能",
+          "feasibility": "中",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "优化加强筋布置（减少材料）",
+          "expected_savings_pct": 8,
+          "mechanism": "拓扑优化减少非必要材料",
+          "quality_risk": "需CAE验证刚度是否满足要求",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "激光拼焊（不同厚度材料组合）",
+          "expected_savings_pct": 10,
+          "mechanism": "关键区域厚料，非关键区域薄料，降低整体材料成本",
+          "quality_risk": "拼焊焊缝质量需控制",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "A柱",
+        "车身件",
+        "TRIP钢",
+        "DP钢",
+        "激光拼焊"
+      ]
+    },
+    {
+      "id": "BODY-004",
+      "category": "车身件",
+      "part_name": "后侧围内板",
+      "material": "DC04冷轧钢板 厚度0.8mm",
+      "typical_cost_per_kg": 8.5,
+      "typical_weight_kg": 6.2,
+      "typical_cost_per_unit": 53,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "DC04→DC03（降牌号）",
+          "expected_savings_pct": 8,
+          "mechanism": "内板成形复杂度低，可用DC03替代DC04",
+          "quality_risk": "需验证成形是否开裂",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "减重孔设计（非受力区域）",
+          "expected_savings_pct": 6,
+          "mechanism": "非受力区域开减重孔，减少材料用量",
+          "quality_risk": "需CAE验证刚度",
+          "feasibility": "高",
+          "implementation_difficulty": "低"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "套裁冲压（废料利用）",
+          "expected_savings_pct": 10,
+          "mechanism": "在废料区域嵌套小件，提升材料利用率",
+          "quality_risk": "需确认嵌套件成形性",
+          "feasibility": "高",
+          "implementation_difficulty": "中"
+        }
+      ],
+      "keywords": [
+        "后侧围",
+        "车身件",
+        "冷轧钢",
+        "减重孔",
+        "套裁"
+      ]
+    }
+  ],
+  "strategy_library": {
+    "description": "VAVE策略知识库：按BCG四抓手（技术/商务/零部件/产业链）细分的行业级方法，生成时逐条跑完。",
+    "strategies": [
+      {
+        "id": "M01",
+        "type": "材料替换",
+        "canonical": "材料替换",
+        "lever": "技术降本",
+        "description": "用成本更低或性能等效的替代材料（工程塑料→通用塑料/玻纤填充、钢→高强钢/铝、进口→国产）。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "机加件",
+          "电子件",
+          "通用件",
+          "外观件",
+          "功能件"
+        ],
+        "triggers": [
+          "塑料",
+          "pp",
+          "abs",
+          "pc",
+          "pa",
+          "钢材",
+          "钢",
+          "铝合金",
+          "铝",
+          "铸铁",
+          "铜",
+          "进口",
+          "高价",
+          "工程塑料",
+          "玻纤",
+          "复合材料",
+          "镁"
+        ],
+        "savings": "5%~25%",
+        "risks": [
+          "性能下降风险",
+          "认证/标定周期长",
+          "供应商切换验证",
+          "外观变化"
+        ],
+        "not_reason": "该零件为安全/法规关键件，材料变更需整车级验证，替换风险高，仅在非安全区域优先评估。"
+      },
+      {
+        "id": "M02",
+        "type": "材料减薄/轻量化（薄壁化）",
+        "canonical": "材料替换",
+        "lever": "技术降本",
+        "description": "在不影响性能前提下减薄壁厚、降低密度（塑料薄壁化10-20%、金属减薄），直接降材料重量与成本。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "外观件"
+        ],
+        "triggers": [
+          "塑料",
+          "注塑",
+          "pp",
+          "abs",
+          "钢板",
+          "冲压",
+          "壁厚",
+          "减重",
+          "轻量",
+          "薄壁"
+        ],
+        "savings": "5%~15%",
+        "risks": [
+          "刚度下降",
+          "缩水/流痕",
+          "成形窗口变窄",
+          "碰撞性能"
+        ],
+        "not_reason": "该零件承载/密封要求高，减薄会突破性能下限，需CAE确认余量，当前不优先。",
+        "sub_triggers": [
+          "薄壁",
+          "减薄",
+          "轻量",
+          "减重",
+          "壁厚",
+          "thinning"
+        ]
+      },
+      {
+        "id": "M03",
+        "type": "结构优化/拓扑优化",
+        "canonical": "结构优化",
+        "lever": "技术降本",
+        "description": "通过拓扑优化、加筋减厚、去料、圆角/拔模优化，在保性能下减少材料与重量。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "机加件",
+          "结构件",
+          "通用件"
+        ],
+        "triggers": [
+          "支架",
+          "壳体",
+          "本体",
+          "框架",
+          "结构",
+          "加强",
+          "筋",
+          "拓扑",
+          "减料",
+          "底板",
+          "罩"
+        ],
+        "savings": "8%~20%",
+        "risks": [
+          "CAE仿真必须通过",
+          "可能涉及周边零件变更",
+          "模具改造"
+        ],
+        "not_reason": "该零件结构已高度优化或形状受布置强约束，拓扑空间有限，需评估收益是否覆盖改动成本。"
+      },
+      {
+        "id": "M04",
+        "type": "零件集成/功能集成",
+        "canonical": "功能集成",
+        "lever": "技术降本",
+        "description": "将多个零件/功能集成到单一零件（多件合一、嵌件注塑、电子集成），减少零件总数与装配。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "电子件",
+          "功能件"
+        ],
+        "triggers": [
+          "支架",
+          "盖板",
+          "卡扣",
+          "线束",
+          "连接器",
+          "嵌件",
+          "总成",
+          "模块",
+          "集成",
+          "多个",
+          "组合"
+        ],
+        "savings": "15%~30%",
+        "risks": [
+          "功能安全要求提高",
+          "单件失效影响扩大",
+          "模具复杂",
+          "软件集成"
+        ],
+        "not_reason": "该零件与周边接口耦合强/需独立可维修，强行集成会放大失效风险，暂不适配。"
+      },
+      {
+        "id": "M05",
+        "type": "工艺变更与优化",
+        "canonical": "工艺优化",
+        "lever": "技术降本",
+        "description": "改用更高效率/材料利用率工艺（冲压→注塑、铸造→冲压、近净成形、液压/热成形、激光拼焊）。",
+        "applicable_parts": [
+          "冲压件",
+          "压铸件",
+          "机加件",
+          "塑料件",
+          "结构件"
+        ],
+        "triggers": [
+          "铸造",
+          "压铸",
+          "冲压",
+          "锻造",
+          "机加",
+          "切削",
+          "焊接",
+          "工序",
+          "注塑",
+          "成形",
+          "拼焊",
+          "液压"
+        ],
+        "savings": "10%~25%",
+        "risks": [
+          "设备投入大",
+          "新工艺质量验证周期长",
+          "工装重设计"
+        ],
+        "not_reason": "现有工艺已经济批量最优，工艺变更需新线体投资，ROI不划算，仅在小批量/新项目评估。"
+      },
+      {
+        "id": "M06",
+        "type": "公差放宽/设计简化（DFM）",
+        "canonical": "结构优化",
+        "lever": "技术降本",
+        "description": "放宽非关键尺寸公差、简化几何特征，降低加工/检测难度与废品率。",
+        "applicable_parts": [
+          "机加件",
+          "冲压件",
+          "压铸件",
+          "塑料件",
+          "通用件"
+        ],
+        "triggers": [
+          "公差",
+          "精度",
+          "机加",
+          "加工",
+          "检测",
+          "尺寸",
+          "镜面",
+          "配合",
+          "it"
+        ],
+        "savings": "3%~10%",
+        "risks": [
+          "配合松动",
+          "功能漂移",
+          "外观偏差"
+        ],
+        "not_reason": "该零件公差由功能/配合直接决定，放宽会超差，需重新做公差链分析，空间有限。",
+        "sub_triggers": [
+          "公差",
+          "精度",
+          "it",
+          "镜面",
+          "配合",
+          "it6",
+          "it7"
+        ]
+      },
+      {
+        "id": "M07",
+        "type": "去冗余功能/功能过剩消除（FAST）",
+        "canonical": "结构优化",
+        "lever": "技术降本",
+        "description": "用FAST功能分析识别并去除用户不需要的过剩功能/过度设计，回归必要功能。",
+        "applicable_parts": [
+          "通用件",
+          "塑料件",
+          "电子件",
+          "功能件",
+          "外观件"
+        ],
+        "triggers": [
+          "功能",
+          "装饰",
+          "多余",
+          "过度",
+          "冗余",
+          "可选",
+          "豪华",
+          "氛围",
+          "灯",
+          "装饰条"
+        ],
+        "savings": "5%~20%",
+        "risks": [
+          "用户感知下降",
+          "配置策略调整",
+          "法规功能"
+        ],
+        "not_reason": "该零件功能与安全/法规/核心体验强相关，去除冗余空间有限，需FAST图逐项确认。",
+        "sub_triggers": [
+          "冗余",
+          "过度",
+          "多余",
+          "装饰",
+          "氛围",
+          "非必要",
+          "可选"
+        ]
+      },
+      {
+        "id": "M08",
+        "type": "装配简化（DFA）",
+        "canonical": "功能集成",
+        "lever": "技术降本",
+        "description": "减少紧固件数量、用卡扣/焊接/胶接替代螺钉，优化装配顺序，降工位与人工。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "电子件",
+          "通用件"
+        ],
+        "triggers": [
+          "螺钉",
+          "螺栓",
+          "卡扣",
+          "焊接",
+          "胶接",
+          "装配",
+          "紧固",
+          "工装",
+          "工位",
+          "线束",
+          "插接"
+        ],
+        "savings": "3%~12%",
+        "risks": [
+          "可拆卸性下降",
+          "维修困难",
+          "异响"
+        ],
+        "not_reason": "该零件需频繁拆装维修，过度简化装配会牺牲可维护性，仅在不维修件上优先。",
+        "sub_triggers": [
+          "卡扣",
+          "螺钉",
+          "螺栓",
+          "焊接",
+          "胶接",
+          "装配",
+          "插接",
+          "紧固"
+        ]
+      },
+      {
+        "id": "M09",
+        "type": "套裁/排样优化（材料利用率）",
+        "canonical": "工艺优化",
+        "lever": "技术降本",
+        "description": "优化板材/型材排样套裁、提高材料利用率，降低单件材料消耗与废料。",
+        "applicable_parts": [
+          "冲压件",
+          "通用件"
+        ],
+        "triggers": [
+          "冲压",
+          "钢板",
+          "板材",
+          "排样",
+          "套裁",
+          "落料",
+          "型材",
+          "卷材",
+          "利用率"
+        ],
+        "savings": "2%~8%",
+        "risks": [
+          "交货期约束",
+          "模具排样限制",
+          "边角料处理"
+        ],
+        "not_reason": "该零件为型材/单件大尺寸或排样已最优，套裁收益有限，仅在多零件混排时考虑。",
+        "sub_triggers": [
+          "套裁",
+          "排样",
+          "落料",
+          "利用率",
+          "拼焊",
+          "排版"
+        ]
+      },
+      {
+        "id": "M10",
+        "type": "近净成形/减少加工余量",
+        "canonical": "工艺优化",
+        "lever": "技术降本",
+        "description": "采用近净成形（精铸、粉末冶金、精密冲压）减少切削余量，降机加工时。",
+        "applicable_parts": [
+          "机加件",
+          "压铸件",
+          "冲压件"
+        ],
+        "triggers": [
+          "机加",
+          "切削",
+          "余量",
+          "铸造",
+          "精铸",
+          "粉末",
+          "锻造",
+          "加工中心"
+        ],
+        "savings": "8%~18%",
+        "risks": [
+          "精度下降",
+          "表面质量",
+          "刀具寿命"
+        ],
+        "not_reason": "该零件精度要求高，近净成形余量不足会导致不合格，需评估工艺能力边界。",
+        "sub_triggers": [
+          "余量",
+          "近净",
+          "精铸",
+          "切削",
+          "粉末",
+          "锻造"
+        ]
+      },
+      {
+        "id": "M11",
+        "type": "供应商竞争/二供开发",
+        "canonical": "供应商优化",
+        "lever": "商务降本",
+        "description": "引入二供/三方比价、招标竞价，打破独家供应，用市场竞争压低采购价。",
+        "applicable_parts": [
+          "通用件",
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "机加件",
+          "电子件",
+          "外观件",
+          "功能件",
+          "结构件"
+        ],
+        "triggers": [
+          "采购",
+          "供应商",
+          "独家",
+          "二供",
+          "比价",
+          "招标",
+          "外购",
+          "定点",
+          "商务"
+        ],
+        "savings": "5%~20%",
+        "risks": [
+          "质量一致性",
+          "次品率",
+          "供应保障",
+          "切换验证"
+        ],
+        "not_reason": "该零件已多供充分竞争或属客户指定/专利件，再开发二供收益有限。"
+      },
+      {
+        "id": "M12",
+        "type": "集中采购/批量折扣",
+        "canonical": "供应商优化",
+        "lever": "商务降本",
+        "description": "合并多车型/多工厂需求集中议价，或提升年用量锁定批量折扣。",
+        "applicable_parts": [
+          "通用件",
+          "标准件",
+          "紧固件",
+          "管路件",
+          "电子件"
+        ],
+        "triggers": [
+          "标准件",
+          "紧固",
+          "批量",
+          "集中",
+          "用量",
+          "年降",
+          "框架",
+          "通用"
+        ],
+        "savings": "3%~15%",
+        "risks": [
+          "预测偏差",
+          "库存上升",
+          "资金占用"
+        ],
+        "not_reason": "该零件需求分散/用量小且波动大，集中议价规模效应不足，收益有限。"
+      },
+      {
+        "id": "M13",
+        "type": "长期协议锁价（LTA）",
+        "canonical": "供应商优化",
+        "lever": "商务降本",
+        "description": "签订长期供货协议锁定价格/分享大宗材料降价，对冲原材料波动。",
+        "applicable_parts": [
+          "通用件",
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "电子件"
+        ],
+        "triggers": [
+          "铝",
+          "钢",
+          "铜",
+          "树脂",
+          "原材料",
+          "大宗",
+          "锁价",
+          "协议",
+          "波动",
+          "pp",
+          "abs"
+        ],
+        "savings": "2%~10%",
+        "risks": [
+          "锁价与市价背离",
+          "供应商履约",
+          "灵活性下降"
+        ],
+        "not_reason": "该零件原料占比低或价格已随行就市，锁价收益有限，仅在高原料占比件考虑。"
+      },
+      {
+        "id": "M14",
+        "type": "标准化/通用化/跨车型借用",
+        "canonical": "设计标准化",
+        "lever": "零部件策略",
+        "description": "统一规格、跨车型借用同一零件，减少零件种类，放大批量降本。",
+        "applicable_parts": [
+          "通用件",
+          "标准件",
+          "紧固件",
+          "管路件",
+          "电子件",
+          "塑料件"
+        ],
+        "triggers": [
+          "标准",
+          "通用",
+          "借用",
+          "平台",
+          "规格",
+          "归一",
+          "紧固",
+          "管路",
+          "卡扣"
+        ],
+        "savings": "15%~35%",
+        "risks": [
+          "各场景性能重新匹配",
+          "供应商整合阻力",
+          "布置差异"
+        ],
+        "not_reason": "该零件各车型布置/性能差异大，强行通用会牺牲性能或引发变更连锁，需平台级推动。"
+      },
+      {
+        "id": "M15",
+        "type": "平台化/模块化",
+        "canonical": "设计标准化",
+        "lever": "零部件策略",
+        "description": "将零件纳入平台模块，跨车型/跨项目复用，降低研发与模具摊薄成本。",
+        "applicable_parts": [
+          "塑料件",
+          "冲压件",
+          "电子件",
+          "结构件",
+          "功能件"
+        ],
+        "triggers": [
+          "平台",
+          "模块",
+          "架构",
+          "跨车型",
+          "复用",
+          "共用",
+          "前舱",
+          "底盘",
+          "车身"
+        ],
+        "savings": "10%~30%",
+        "risks": [
+          "前期平台投入",
+          "车型差异化受限"
+        ],
+        "not_reason": "该零件属项目专属/小批量，平台化摊薄效应不足，仅在新平台规划时前置考虑。"
+      },
+      {
+        "id": "M16",
+        "type": "国产化替代（进口替代）",
+        "canonical": "供应商优化",
+        "lever": "产业链策略",
+        "description": "用国产等效件替代进口件（芯片/传感器/精密件），降单价并提供应安全。",
+        "applicable_parts": [
+          "电子件",
+          "机加件",
+          "功能件",
+          "通用件"
+        ],
+        "triggers": [
+          "进口",
+          "芯片",
+          "传感器",
+          "博世",
+          "大陆",
+          "电装",
+          "外资",
+          "ic",
+          "mcu",
+          "精密",
+          "轴承"
+        ],
+        "savings": "10%~40%",
+        "risks": [
+          "功能等效验证",
+          "AEC-Q认证",
+          "长期可靠性",
+          "供应链单一依赖"
+        ],
+        "not_reason": "该零件无成熟国产等效方案或认证周期过长，国产化风险收益暂不匹配，持续跟踪。"
+      },
+      {
+        "id": "M17",
+        "type": "垂直整合（自制vs外购）",
+        "canonical": "供应商优化",
+        "lever": "产业链策略",
+        "description": "重新评估自制/外购边界，将高溢价外购件转自制或低毛利自制件转外购。",
+        "applicable_parts": [
+          "通用件",
+          "塑料件",
+          "冲压件",
+          "压铸件",
+          "电子件"
+        ],
+        "triggers": [
+          "自制",
+          "外购",
+          "make",
+          "buy",
+          "产能",
+          "毛利",
+          "溢价",
+          "外包",
+          "委外"
+        ],
+        "savings": "5%~20%",
+        "risks": [
+          "产能/质量能力",
+          "固定投资",
+          "管理复杂度"
+        ],
+        "not_reason": "该零件非核心且外购成熟，自制无成本优势；或反之自制能力不具备，边界暂不动。"
+      },
+      {
+        "id": "M18",
+        "type": "近岸化/本地化供应",
+        "canonical": "供应商优化",
+        "lever": "产业链策略",
+        "description": "将远程/进口供应转为近岸本地化，降物流与关税、提响应速度（间接降本）。",
+        "applicable_parts": [
+          "通用件",
+          "冲压件",
+          "压铸件",
+          "塑料件",
+          "电子件"
+        ],
+        "triggers": [
+          "物流",
+          "关税",
+          "远程",
+          "海外",
+          "本地",
+          "近岸",
+          "运输",
+          "交付"
+        ],
+        "savings": "2%~8%",
+        "risks": [
+          "本地供应商能力",
+          "初期质量",
+          "区域配套"
+        ],
+        "not_reason": "该零件本地已有成熟配套或物流占比低，近岸化收益有限，不作为优先。"
+      }
+    ]
+  },
+  "vave_methodology": {
+    "description": "汽车行业VAVE/VA/VE系统化方法论（来源：长安汽车课件+BCG框架+行业实践，2024）",
+    "sources": [
+      "长安汽车VA/VE价值工程理论方法及应用（MBA智库）",
+      "BCG汽车企业降本分类框架（eet-china, 2024）",
+      "麦尔斯《价值分析与价值工程》",
+      "线束VAVE方法挖掘与应用（知乎, 2022）"
+    ],
+    "core_equation": {
+      "formula": "V = F / C",
+      "explanation": "V=价值(Value) F=功能(Function) C=生命周期成本(Life Cycle Cost)",
+      "five_paths_to_increase_value": [
+        {
+          "path": 1,
+          "function_change": "功能↑（提高）",
+          "cost_change": "成本不变",
+          "value": "V↑",
+          "description": "在不增加成本的前提下提升功能"
+        },
+        {
+          "path": 2,
+          "function_change": "功能不变",
+          "cost_change": "成本↓（降低）",
+          "value": "V↑",
+          "description": "保持功能满足的前提下消除不必要的成本"
+        },
+        {
+          "path": 3,
+          "function_change": "功能↑（大幅提高）",
+          "cost_change": "成本↓（小幅提高）",
+          "value": "V↑↑",
+          "description": "功能提升幅度大于成本增加幅度，最优路径"
+        },
+        {
+          "path": 4,
+          "function_change": "功能略↓",
+          "cost_change": "成本↓↓（大幅降低）",
+          "value": "V↑",
+          "description": "去掉用户不重视的过度功能，以大幅降本"
+        },
+        {
+          "path": 5,
+          "function_change": "功能↑",
+          "cost_change": "成本↓",
+          "value": "V↑↑↑",
+          "description": "同时提升功能并降低成本，最理想状态"
+        }
+      ]
+    },
+    "ve_vs_va": {
+      "difference": "VE（Value Engineering）在产品开发设计阶段进行，侧重'革新'；VA（Value Analysis）在批量生产阶段进行，侧重'改良'",
+      "timing": {
+        "VE": {
+          "phase": "开发设计阶段",
+          "focus": "围绕实现产品必要功能进行价值与成本革新",
+          "role": "设计工程师主导，供应商早期介入（EP人）"
+        },
+        "VA": {
+          "phase": "批量生产阶段（SOP及以后）",
+          "focus": "对设计构造、加工方法和制造工艺进行持续分析和改进",
+          "role": "工艺工程师主导，质量/采购协同"
+        }
+      }
+    },
+    "automotive_implementation_phases": {
+      "phase_1": {
+        "name": "项目初始设计阶段（规划/设计）",
+        "description": "供应商驻场参与OEM同步开发阶段，3D工程师看装配环境，2D工程师建立数据库和选型，原理工程师出拓扑图",
+        "vave_opportunities": [
+          "功能定义：明确基本功能vs辅助功能，去除过度设计",
+          "材料选型：与供应商联合进行材料降本方案",
+          "结构布局：优化装配结构，减少零部件数量",
+          "平台化设计：与现有车型通用化，减少专用件",
+          "标准化：借用已有标准件，避免非必要新开模具"
+        ],
+        "vave_role": "最佳VAVE时机，70-80%成本在此阶段锁定"
+      },
+      "phase_2": {
+        "name": "小批量试装阶段（验证）",
+        "description": "对项目各方面进行验证确认，是提出VAVE方案的关键窗口",
+        "vave_opportunities": [
+          "工艺验证：注塑/冲压/装配工艺试装数据反馈",
+          "来料检验：原材料批次一致性核查，识别降本空间",
+          "装配验证：装配过程中发现结构冗余或干涉",
+          "成本核算：样件成本与目标成本差距分析",
+          "供应商验证：二供/替代材料可行性验证"
+        ]
+      },
+      "phase_3": {
+        "name": "SOP量产阶段",
+        "description": "大批量装车，考验项目各项能力，持续改善",
+        "vave_opportunities": [
+          "VE持续改进：量产中识别工序浪费",
+          "学习曲线：随产量提升优化工艺参数",
+          "供应链优化：年度价格谈判，批量折扣",
+          "国产化替代：验证国内供应商替代进口件",
+          "设计变更降本：结合售后反馈优化设计"
+        ]
+      }
+    },
+    "eight_step_ve_job_plan": {
+      "description": "VE工作程序八步法（麦尔斯体系，汽车行业通用）",
+      "steps": [
+        {
+          "step": 1,
+          "name": "选定对象",
+          "inputs": "量大面广/成本高/结构复杂/重量大的零部件",
+          "outputs": "VE对象清单和优先级排序",
+          "tools": "10/80法则：10%的零件占80%成本 → 优先选TOP20%"
+        },
+        {
+          "step": 2,
+          "name": "收集信息",
+          "inputs": "图纸/BOM/供应商报价/加工工艺/材料牌号/重量",
+          "outputs": "零件成本分解表（材料+工时+模具摊销+包装运输+管理）",
+          "tools": "爆炸图、供应商成本结构分析、行业价格数据库"
+        },
+        {
+          "step": 3,
+          "name": "功能分析（FAST）",
+          "inputs": "零件及其构成要素",
+          "outputs": "功能系统图（基本功能/辅助功能/必要功能/不必要功能）",
+          "tools": "FAST功能分析：How-Why图，识别'why so'和'how come'链"
+        },
+        {
+          "step": 4,
+          "name": "创造构思（方案挖掘）",
+          "inputs": "功能分析和成本分解结果",
+          "outputs": "备选方案清单（数量至少3个/零件）",
+          "tools": "头脑风暴+13个促进术（避免一般化/用金额表示关键公差/利用供方现成功能产品等）"
+        },
+        {
+          "step": 5,
+          "name": "评估筛选",
+          "inputs": "备选方案",
+          "outputs": "方案优选排序表（价值系数=功能评价系数/成本系数）",
+          "tools": "价值工程评价法：功能重要性评分×功能成本系数；ABC分类"
+        },
+        {
+          "step": 6,
+          "name": "方案开发",
+          "inputs": "优选方案",
+          "outputs": "详细技术方案（图纸/工艺规范/材料规格/供应商定点）",
+          "tools": "DFMEA、CAE仿真、样件试制计划"
+        },
+        {
+          "step": 7,
+          "name": "汇报批准",
+          "inputs": "技术方案+降本金额测算",
+          "outputs": "技术评审委员会批准",
+          "tools": "降本测算表（单件降本×年用量=年度降本ROI）"
+        },
+        {
+          "step": 8,
+          "name": "实施推广",
+          "inputs": "批准方案",
+          "outputs": "SOP变更/新方案执行；横向推广至同类零件",
+          "tools": "工程变更单（ECR/ECO）、PPAP变更通知、横向展开清单"
+        }
+      ]
+    },
+    "object_selection_criteria": {
+      "four_p_model": {
+        "P1": "量大（High Volume）：年用量大的零件，1元/件的降本×10万件=10万/年",
+        "P2": "价高（High Price）：单件成本高的零件，降本比例虽小但绝对值大",
+        "P3": "复杂（Complex）：结构复杂件，往往存在功能过度或工序冗余",
+        "P4": "重材（Heavy Weight）：材料成本占比高的零件，减重直接降本"
+      },
+      "ten_eighty_rule": "整车10%的零部件占总成本约80%，优先聚焦TOP20零件",
+      "priority_matrix": "按'年降本潜力×可行性'两维度排优先级，P0=高潜高可行"
+    },
+    "target_setting": {
+      "principle": "目标必须有明确数值，不可设定不合理的模糊目标",
+      "reference_table": [
+        {
+          "cost_reduction_method": "一般QC降本",
+          "typical_range": "5%"
+        },
+        {
+          "cost_reduction_method": "采购谈判降本",
+          "typical_range": "5-10%"
+        },
+        {
+          "cost_reduction_method": "VE价值工程",
+          "typical_range": "15-30%"
+        },
+        {
+          "cost_reduction_method": "DFMA（面向制造装配设计）",
+          "typical_range": "20-40%"
+        }
+      ],
+      "automotive_context": "车企通常要求年降3-8%（量产维持）+ 一次新项目降本15-30%（VE达成）",
+      "roi_consideration": "VE项目实施成本（验证/工装/模具）应小于年度降本金额的50%，回收期<12个月"
+    },
+    "automotive_cost_breakdown": {
+      "material_cost": "原材料和零件采购成本，通常占单件成本40-60%",
+      "manufacturing_cost": "加工费（成形/机加/装配），通常占20-30%",
+      "tooling_amortization": "模具/工装摊销，通常占10-15%",
+      "packaging_logistics": "包装运输，通常占3-5%",
+      "management_overhead": "管理费用+利润，通常占10-15%"
+    },
+    "common_vave_strategies_by_part_type": {
+      "plastic_parts": {
+        "typical_strategies": [
+          "材料替换（高价位工程塑料→普通塑料或玻纤填充）",
+          "薄壁化（壁厚减少10-20%）",
+          "多件集成（将多个嵌件一体化注塑）",
+          "发泡成形（实心→发泡，减重20-30%）"
+        ],
+        "typical_savings_range": "10-25%",
+        "key_risks": [
+          "外观变化（缩水/流痕）",
+          "尺寸变化（影响配合）",
+          "强度下降（需CAE验证）",
+          "模具改造/新开成本"
+        ]
+      },
+      "stamping_parts": {
+        "typical_strategies": [
+          "高强钢替代普通钢板（减薄降重）",
+          "热成形替代冷成形（复杂结构一步成形）",
+          "液压成形（减少工序和焊点）",
+          "激光拼焊（不同厚度/材料拼焊）"
+        ],
+        "typical_savings_range": "8-20%",
+        "key_risks": [
+          "模具改造投资",
+          "成形工艺窗口",
+          "焊接质量",
+          "碰撞安全验证"
+        ]
+      },
+      "casting_parts": {
+        "typical_strategies": [
+          "高压铸造→低压铸造（减少机加余量）",
+          "铝合金替代铸铁（减重40-50%）",
+          "铸件轻量化（壁厚优化+拓扑优化）",
+          "砂芯减少（一体成形替代组合砂芯）"
+        ],
+        "typical_savings_range": "10-30%",
+        "key_risks": [
+          "气密性/水密性",
+          "材质机械性能",
+          "模具寿命",
+          "高压清洗/泄漏风险"
+        ]
+      },
+      "machined_parts": {
+        "typical_strategies": [
+          "近净形（减少切削余量）",
+          "工艺优化（减少装夹次数/工序合并）",
+          "材料替换（铝件替代钢件）",
+          "批量采购优化（标准尺寸定制）"
+        ],
+        "typical_savings_range": "8-18%",
+        "key_risks": [
+          "精度下降",
+          "表面处理质量",
+          "刀具寿命",
+          "设备能力"
+        ]
+      },
+      "electronics": {
+        "typical_strategies": [
+          "元器件国产化替代",
+          "设计方案优化（减少元器件数量）",
+          "PCB层数优化",
+          "封装形式优化（QFP→QFN等）"
+        ],
+        "typical_savings_range": "10-30%",
+        "key_risks": [
+          "功能等效性验证",
+          "AEC-Q认证",
+          "长期可靠性",
+          "供应链单一依赖"
+        ]
+      }
+    },
+    "fast_functional_analysis": {
+      "description": "Function Analysis System Technique，VAVE核心分析工具，通过How-Why链梳理零件功能关系",
+      "how_why_logic": "左侧How回答'如何实现该功能'，右侧Why回答'为什么需要该功能'，中间为CLINE（功能平衡线）",
+      "application_steps": [
+        "明确研究对象的基本功能（Primary Function）",
+        "列出所有辅助功能（Secondary Functions）",
+        "区分必要功能（Necessary）和不必要功能（Unnecessary）",
+        "用How-Why链将功能串联，识别功能过度或缺失",
+        "对每个不必要功能提问：能否去除？去除后能否接受？"
+      ],
+      "automotive_example": "仪表台本体：支撑仪表（必要）→承载电子件（必要）→提供外观质感（次要）→特定纹理装饰（不必要→成本优化点）"
+    },
+    "decomposition_cost_method": {
+      "description": "零件成本分解是VAVE定量分析的基础，汽车行业标准分解方式：",
+      "formula": "单件成本 = 材料成本 + 加工费 + 模具摊销 + 包装运输 + 管理利润",
+      "material_cost_calc": "材料单价（元/kg）×零件净重（kg）×（1+不良率%）÷（1-材料利用率%）",
+      "processing_cost_calc": "设备台时费率（元/小时）× 工序时间（小时/件） + 人工费率 × 人工工时（小时/件）",
+      "tooling_amortization_calc": "模具费用（元）÷ 模具寿命（件）或 ÷ 年用量（件/年）",
+      "common_markup": "管理费用+利润通常占上述合计的10-15%"
+    },
+    "cross_functional_team": {
+      "description": "VAVE落地三要素：跨职能团队+工作计划+功能分析",
+      "required_roles": [
+        "项目经理/牵头人（统筹协调）",
+        "设计工程师（产品知识+功能定义）",
+        "工艺工程师（制造可行性+工时估算）",
+        "质量工程师（SQE，验证方案质量影响）",
+        "采购工程师（供应商报价+二供资源）",
+        "财务/成本工程师（降本金额测算）"
+      ],
+      "meeting_format": "VAVE专题工作坊（Workshop），每期聚焦1-2个零件，2-4小时深度分析"
+    },
+    "common_pitfalls": {
+      "pitfall_1": {
+        "name": "仅做商务降本，跳过技术降本",
+        "consequence": "每次降价谈判消耗供应商关系，长期降本空间有限",
+        "solution": "技术降本（VE）与商务降本比例建议7:3"
+      },
+      "pitfall_2": {
+        "name": "VAVE介入时机过晚",
+        "consequence": "设计冻结后改一个零件牵一发动全身，改造成本高",
+        "solution": "设计阶段早期介入，VAVE评审纳入GATE节点"
+      },
+      "pitfall_3": {
+        "name": "过度追求降本忽视功能",
+        "consequence": "质量事故/售后索赔，成本不降反升",
+        "solution": "功能满足是底线，任何方案须通过功能等效验证"
+      },
+      "pitfall_4": {
+        "name": "供应商参与度不足",
+        "consequence": "主机厂单方面压价，供应商被迫用差材料，质量风险转移",
+        "solution": "与供应商建立VAVE联合团队，利益共享机制"
+      },
+      "pitfall_5": {
+        "name": "有方案无落地",
+        "consequence": "分析报告一大堆，量产变更寥寥无几",
+        "solution": "目标分解到年度KPI，建立方案执行跟踪机制"
+      }
+    },
+    "bcg_cost_reduction_four_levers": {
+      "description": "波士顿咨询汽车行业降本四抓手（战略层-业务层-支撑层全覆盖）",
+      "levers": [
+        {
+          "lever": 1,
+          "name": "商务降本",
+          "examples": [
+            "年度价格谈判",
+            "批量折扣",
+            "长期协议锁定",
+            "多供应商竞争"
+          ]
+        },
+        {
+          "lever": 2,
+          "name": "技术降本（VAVE核心）",
+          "examples": [
+            "设计优化",
+            "材料替换",
+            "工艺优化",
+            "减少零部件数量"
+          ]
+        },
+        {
+          "lever": 3,
+          "name": "零部件策略",
+          "examples": [
+            "平台化/通用化",
+            "跨车型借用",
+            "零件归一化",
+            "标准化件比例提升"
+          ]
+        },
+        {
+          "lever": 4,
+          "name": "产业链策略",
+          "examples": [
+            "垂直整合（自制vs外购决策）",
+            "近岸化/本地化",
+            "战略供应商绑定",
+            "产业链协同降本"
+          ]
+        }
+      ]
+    },
+    "evaluation_criteria_for_vave_proposals": {
+      "feasibility_score": {
+        "high": "技术上可行，供应商有意愿配合，开发资源充足",
+        "medium": "有一定技术难度，需专项验证或供应商能力提升",
+        "low": "技术瓶颈明显或供应商无法实现，需要颠覆性改变"
+      },
+      "savings_score": {
+        "calculation": "单件降本（元/件）× 年用量（件/年）= 年度降本（元/年）",
+        "thresholds": {
+          "high": "年度降本≥50万元，或单件降本≥5%",
+          "medium": "年度降本10-50万元",
+          "low": "年度降本<10万元"
+        }
+      },
+      "risk_score": {
+        "low": "无需验证或仅需常规验证，不影响质量和交付",
+        "medium": "需CAE/样件/小批验证，周期3-6个月，有一定质量风险",
+        "high": "涉及安全/法规/客户指定，需大量验证或无法说服客户"
+      },
+      "implementation_difficulty": {
+        "low": "仅需供应商内部变更，无需客户批准",
+        "medium": "需工程变更（ECO），客户知情或批准",
+        "high": "涉及PPAP重做，安全/法规变更，客户强制要求"
+      },
+      "comprehensive_ranking": {
+        "formula": "综合优先级 = 3×年度降本分 + 2×可行性分 + 2×风险分（低风险=3分，高风险=1分）",
+        "action": "P0=综合高分立即推进 | P1=中等优先级纳入计划 | P2=观察/后续跟踪"
+      }
+    },
+    "practical_summary": {
+      "golden_rule": "70-80%的产品成本在开发设计阶段已锁定，设计阶段投入1元VAVE≈量产阶段节省10元",
+      "cost_breakdown_priority": "材料成本>制造费用>模具摊销>包装运输>管理利润——降本优先找最大的成本项",
+      "minimum_proposals_per_part": "每个零件至少提出3个以上备选方案，禁止只有一个方案就做决策",
+      "roi_discipline": "VE项目预估降本金额必须大于预估实施成本的3倍以上，否则不值得投入",
+      "data_discipline": "所有降本数字须有依据：供应商报价/材料牌号价格/工时数据——禁止拍脑袋",
+      "documentation": "每个VAVE方案必须记录：原始成本/目标成本/降本路径/验证计划/责任人/完成时间"
+    }
+  },
+  "enhanced_cases": [
+    {
+      "id": "PLAS-001-v2",
+      "category": "塑料件",
+      "part_name": "仪表台本体",
+      "material": "PP+T20%玻纤",
+      "typical_cost_per_unit": 86,
+      "typical_annual_volume": 120000,
+      "annual_spend_wan": 1032,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "PP+T20%玻纤 → PP+T10%玻纤 或 滑石粉填充PP（TD15）",
+          "expected_savings_pct": "10-15%",
+          "mechanism": "滑石粉填充PP成本低于玻纤填充PP；T10%比T20%减少材料密度，单件降本约¥10.3/件",
+          "implementation_difficulty": "低",
+          "quality_risk": "需验证：冲击强度（落锤/摆锤冲击）、热老化（85°C 1000h）、内饰件VOC",
+          "feasibility": "高",
+          "annual_savings_wan": 123.6,
+          "case_ref": "某自主SUV仪表台本体项目，材料切换后通过热老化+内饰VOC验证，降本¥9.8/件"
+        },
+        {
+          "strategy": "结构优化",
+          "direction": "嵌件集成：多个独立塑料件（出风口壳体/杯托/储物盒）一体化注塑",
+          "expected_savings_pct": "8-12%",
+          "mechanism": "减少装配工序（螺钉/卡扣/焊接）+减少包材，单件降本约¥8-10元",
+          "implementation_difficulty": "高",
+          "quality_risk": "出风口功能精度要求高，一体化后模具复杂，维修困难",
+          "feasibility": "低",
+          "recommended_alternative": "仅集成非功能嵌件（如线束卡扣），出风口保持独立",
+          "case_ref": "建议P2，不推荐直接执行"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "低压注塑/气辅注塑替代传统注塑",
+          "expected_savings_pct": "5-10%",
+          "mechanism": "减少材料用量（壁厚可减少）+减少注塑压力=减少机器能耗和模具磨损",
+          "implementation_difficulty": "中",
+          "quality_risk": "气痕影响外观（仪表台可见区域），与内饰外观要求冲突",
+          "feasibility": "低",
+          "recommended_alternative": "仅在骨架内部等非可见区域局部应用气辅",
+          "case_ref": "建议P2，不推荐直接执行"
+        },
+        {
+          "strategy": "壁厚优化",
+          "direction": "统一骨架壁厚和加强筋设计，减少非功能区域材料",
+          "expected_savings_pct": "3-5%",
+          "mechanism": "CAE优化壁厚分布，在满足NVH和刚度要求的前提下减少材料",
+          "implementation_difficulty": "中",
+          "quality_risk": "需进行模态分析和NVH固定点刚度校核",
+          "feasibility": "高",
+          "annual_savings_wan": 40.8,
+          "case_ref": "某德系SUV仪表台骨架减薄项目，通过模态分析+台架试验验证"
+        },
+        {
+          "strategy": "供应商优化",
+          "direction": "开发第二供应商或国产材料替代进口PP",
+          "expected_savings_pct": "5-8%",
+          "mechanism": "进口PP价格高于国产30-50%；多家供应商竞争压价",
+          "implementation_difficulty": "低",
+          "quality_risk": "不同供应商材料批次一致性差异，需加强来料检验",
+          "feasibility": "高",
+          "annual_savings_wan": 67.2,
+          "case_ref": "国产改性PP（如中石化巴陵石化）替代进口某品牌，单价降低约¥4000/吨"
+        }
+      ]
+    },
+    {
+      "id": "STAMP-002",
+      "category": "冲压件",
+      "part_name": "发动机舱盖（引擎盖）",
+      "material": "DC01冷轧钢板 厚度1.0mm",
+      "typical_cost_per_unit": 145,
+      "typical_annual_volume": 80000,
+      "annual_spend_wan": 1160,
+      "vave_strategies": [
+        {
+          "strategy": "材料升级",
+          "direction": "DC01 → DC03深冲钢板（可减薄至0.8mm）",
+          "expected_savings_pct": "15%",
+          "mechanism": "深冲钢板成形性更好，可减薄+减少工序，降低模具复杂度和材料用量",
+          "implementation_difficulty": "中",
+          "quality_risk": "外覆盖件外观等级高，需确保无冲压缺陷；碰撞变形可修复性需验证",
+          "feasibility": "高",
+          "case_ref": "某日系车型引擎盖DC01→DC03+0.8mm，通过冲压仿真和外观评审"
+        },
+        {
+          "strategy": "高强钢替代",
+          "direction": "冷轧钢板 → 烘烤硬化钢（BH钢，屈服强度300→400MPa）",
+          "expected_savings_pct": "10-18%",
+          "mechanism": "强度提升后可减薄，同时满足外覆盖件抗凹性要求",
+          "implementation_difficulty": "高",
+          "quality_risk": "烘烤硬化温度窗口与油漆烘烤工艺匹配；表面外观等级",
+          "feasibility": "中",
+          "case_ref": "需与油漆和冲压工艺联合验证"
+        },
+        {
+          "strategy": "结构集成",
+          "direction": "将引擎盖内板加强件与外板集成，减少一个冲压件",
+          "expected_savings_pct": "20%",
+          "mechanism": "减少一个冲压件=减少一副模具+工序+包材+装配",
+          "implementation_difficulty": "高",
+          "quality_risk": "CAE碰撞安全验证：行人保护和偏置碰撞",
+          "feasibility": "中",
+          "case_ref": "某自主车型引擎盖一体化项目，减少2个零件，单件降本¥29"
+        }
+      ]
+    },
+    {
+      "id": "CAST-001",
+      "category": "压铸件",
+      "part_name": "转向节",
+      "material": "EN-GJS-400-15球墨铸铁（铁型覆砂）",
+      "typical_cost_per_unit": 128,
+      "typical_annual_volume": 60000,
+      "annual_spend_wan": 768,
+      "vave_strategies": [
+        {
+          "strategy": "材料替换",
+          "direction": "球墨铸铁 → 铝合金（A356-T6），减重50%+防腐",
+          "expected_savings_pct": "15-25%",
+          "mechanism": "铝合金转向节重量从约5.5kg降至2.5kg，减少整车簧下质量+防腐工艺简化",
+          "implementation_difficulty": "高",
+          "quality_risk": "铝合金疲劳性能低于铸铁，需完整CAE+台架试验（转向系统疲劳耐久）",
+          "feasibility": "中",
+          "case_ref": "电动车因簧下质量对续航敏感，此方案接受度高；需重新设计制动卡钳安装点"
+        },
+        {
+          "strategy": "工艺优化",
+          "direction": "高压铸造→低压铸造（减少机加余量20%）",
+          "expected_savings_pct": "8-12%",
+          "mechanism": "低压铸造内流道更均匀，冒口（工艺废料）减少，减少后续机加余量",
+          "implementation_difficulty": "低",
+          "quality_risk": "铸件气密性：转向节涉及刹车油道，不可渗漏",
+          "feasibility": "高",
+          "case_ref": "某德系转向节从高压铸造改低压铸造，废品率从4%降至1.8%"
+        }
+      ]
+    },
+    {
+      "id": "ELEC-001",
+      "category": "电子件",
+      "part_name": "BCM车身控制模块",
+      "material": "PCB+元器件（MCU+MOSFET+继电器）",
+      "typical_cost_per_unit": 285,
+      "typical_annual_volume": 150000,
+      "annual_spend_wan": 4275,
+      "vave_strategies": [
+        {
+          "strategy": "元器件国产化",
+          "direction": "MCU：瑞萨/NXP → 国产（如兆易创新GD32）",
+          "expected_savings_pct": "20-35%",
+          "mechanism": "国产MCU价格约为进口品牌的40-60%，且供应链更稳定",
+          "implementation_difficulty": "高",
+          "quality_risk": "AEC-Q100认证：温度等级/ESD/EMI兼容性；软件生态差异",
+          "feasibility": "中",
+          "case_ref": "需完整DV验证（电气性能+环境可靠性+EMC），周期12-18个月"
+        },
+        {
+          "strategy": "设计方案优化",
+          "direction": "将分立元器件（MOSFET+驱动IC+继电器）→智能高边开关IC",
+          "expected_savings_pct": "15-25%",
+          "mechanism": "一颗智能高边开关替代3-5颗分立器件，PCB面积减少40%，贴片成本大幅降低",
+          "implementation_difficulty": "高",
+          "quality_risk": "功能等效性验证：诊断功能/保护功能是否完全兼容",
+          "feasibility": "中",
+          "case_ref": "某自主车企BCM通过此方案减少4个零件型号，降本约¥28/件"
+        },
+        {
+          "strategy": "PCB优化",
+          "direction": "PCB层数从4层→2层（重新布局布线优化）",
+          "expected_savings_pct": "12-18%",
+          "mechanism": "PCB面积减少+层数减少，板材成本和加工费双降",
+          "implementation_difficulty": "中",
+          "quality_risk": "信号完整性：高速信号线阻抗控制；EMC测试",
+          "feasibility": "高",
+          "case_ref": "前提是有足够的布局空间和合理的布线方案"
+        }
+      ]
+    }
+  ],
+  "material_price_reference": {
+    "description": "汽车行业常用原材料价格参考基准（来源：普拉司网/SMM/我的钢铁/汽车之家，2024-2025年数据）",
+    "disclaimer": "价格随市场波动，以下数据为参考区间；实际采购价以供应商报价为准；建议每季度更新一次",
+    "units": "元/吨（含税参考价）",
+    "materials": [
+      {
+        "category": "有色金属（压铸/线束用）",
+        "items": [
+          {
+            "name": "电解铜 Cu≥99.95%",
+            "price_range": "73800-78600",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "同比+12%；线束用铜主要原料"
+          },
+          {
+            "name": "A00铝（原铝）",
+            "price_range": "19800-21200",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "波动区间19500-21500；压铸铝合金原料"
+          },
+          {
+            "name": "1#铅 Pb≥99.994%",
+            "price_range": "15800-17200",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "蓄电池用铅"
+          },
+          {
+            "name": "0#锌 Zn≥99.995%",
+            "price_range": "21500-23600",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "镀锌用锌"
+          },
+          {
+            "name": "1#锡 Sn≥99.90%",
+            "price_range": "245000-268000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "电子焊料用锡"
+          },
+          {
+            "name": "1#镍 Ni≥99.90%",
+            "price_range": "128000-142000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "不锈钢/电池用镍"
+          }
+        ]
+      },
+      {
+        "category": "铝合金（汽车铸造用）",
+        "items": [
+          {
+            "name": "ADC12 压铸铝合金",
+            "price_range": "19200-20800",
+            "unit": "元/吨",
+            "source": "SMM/隆众 2025",
+            "notes": "主流压铸件材料，价随A00铝波动"
+          },
+          {
+            "name": "A356.2 铸造铝合金",
+            "price_range": "20200-21800",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "车轮毂用"
+          },
+          {
+            "name": "ZL114A 铸造铝硅合金",
+            "price_range": "22500-24200",
+            "unit": "元/吨",
+            "source": "行业调研 2025",
+            "notes": "副车架等结构件用；含Sr变质处理"
+          },
+          {
+            "name": "6061 铝合金挤压棒",
+            "price_range": "22800-24500",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "机加件/结构件用；T6态"
+          }
+        ]
+      },
+      {
+        "category": "汽车用钢材",
+        "items": [
+          {
+            "name": "冷轧板 DC01 1.0mm",
+            "price_range": "4480-4980",
+            "unit": "元/吨",
+            "source": "我的钢铁 2025",
+            "notes": "车身外覆盖件用"
+          },
+          {
+            "name": "冷轧板 DC04 深冲级",
+            "price_range": "4880-5380",
+            "unit": "元/吨",
+            "source": "我的钢铁 2025",
+            "notes": "复杂拉延零件用"
+          },
+          {
+            "name": "热轧板 SS400 3.0mm",
+            "price_range": "3780-4180",
+            "unit": "元/吨",
+            "source": "我的钢铁 2025",
+            "notes": "结构件/支架用"
+          },
+          {
+            "name": "热镀锌板 DX51D+Z",
+            "price_range": "4980-5480",
+            "unit": "元/吨",
+            "source": "我的钢铁 2025",
+            "notes": "防腐件用"
+          },
+          {
+            "name": "高强钢 440W",
+            "price_range": "5480-5980",
+            "unit": "元/吨",
+            "source": "行业调研 2025",
+            "notes": "加强板用；价格高于普通冷轧约10-15%"
+          },
+          {
+            "name": "热成形钢 B1500HS",
+            "price_range": "6800-7600",
+            "unit": "元/吨",
+            "source": "行业调研 2025",
+            "notes": "门环/A柱/B柱用；含Al-Si镀层"
+          },
+          {
+            "name": "酸洗钢板 SPHC 2.5mm",
+            "price_range": "4080-4480",
+            "unit": "元/吨",
+            "source": "我的钢铁 2025",
+            "notes": "冲压结构件用"
+          }
+        ]
+      },
+      {
+        "category": "通用塑料（注塑件用）",
+        "items": [
+          {
+            "name": "PP 均聚级（拉丝/注塑）",
+            "price_range": "8200-9800",
+            "unit": "元/吨",
+            "source": "隆众资讯/普拉司 2025",
+            "notes": "内饰件/保险杠骨架主流材料"
+          },
+          {
+            "name": "PP 共聚级",
+            "price_range": "8800-10500",
+            "unit": "元/吨",
+            "source": "隆众资讯 2025",
+            "notes": "抗冲改性，保险杠外皮/仪表板骨架"
+          },
+          {
+            "name": "PP+TD20 矿物填充PP",
+            "price_range": "9500-11500",
+            "unit": "元/吨",
+            "source": "普拉司网 2025",
+            "notes": "仪表板骨架/风扇护罩用"
+          },
+          {
+            "name": "ABS 通用级",
+            "price_range": "11500-13500",
+            "unit": "元/吨",
+            "source": "隆众资讯 2025",
+            "notes": "内饰装饰件/格栅用"
+          },
+          {
+            "name": "PA6+GF30 玻纤增强",
+            "price_range": "17500-21500",
+            "unit": "元/吨",
+            "source": "普拉司网 2025",
+            "notes": "以塑代钢结构件用"
+          },
+          {
+            "name": "PA66+GF30",
+            "price_range": "23500-28500",
+            "unit": "元/吨",
+            "source": "普拉司网 2025",
+            "notes": "耐高温以塑代钢件"
+          },
+          {
+            "name": "PC/ABS 合金",
+            "price_range": "18500-22500",
+            "unit": "元/吨",
+            "source": "普拉司网 2025",
+            "notes": "内饰装饰件/仪表板用"
+          },
+          {
+            "name": "PBT+GF30",
+            "price_range": "19500-23500",
+            "unit": "元/吨",
+            "source": "普拉司网 2025",
+            "notes": "接插件/电子件用"
+          }
+        ]
+      },
+      {
+        "category": "特种材料/新能源用",
+        "items": [
+          {
+            "name": "电池级碳酸锂（99.5%）",
+            "price_range": "68000-85000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "磷酸铁锂/三元材料原料；波动极大"
+          },
+          {
+            "name": "电池级氢氧化锂",
+            "price_range": "72000-88000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "高镍三元材料用"
+          },
+          {
+            "name": "三元材料 NCM523",
+            "price_range": "115000-135000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "动力电池正极材料"
+          },
+          {
+            "name": "电解铜箔 6μm",
+            "price_range": "92000-105000",
+            "unit": "元/吨",
+            "source": "SMM 2025",
+            "notes": "锂电池负极集流体"
+          },
+          {
+            "name": "碳纤维 T300级（3K）",
+            "price_range": "180000-220000",
+            "unit": "元/吨",
+            "source": "行业调研 2025",
+            "notes": "复合材料结构件用"
+          }
+        ]
+      },
+      {
+        "category": "橡胶/密封材料",
+        "items": [
+          {
+            "name": "天然橡胶 SCR5",
+            "price_range": "14500-16800",
+            "unit": "元/吨",
+            "source": "隆众资讯 2025",
+            "notes": "密封条/衬套/减震垫用"
+          },
+          {
+            "name": "三元乙丙橡胶 EPDM",
+            "price_range": "18500-22500",
+            "unit": "元/吨",
+            "source": "隆众资讯 2025",
+            "notes": "车门窗密封条/水管用"
+          },
+          {
+            "name": "丁腈橡胶 NBR",
+            "price_range": "17500-20500",
+            "unit": "元/吨",
+            "source": "隆众资讯 2025",
+            "notes": "油封/密封圈用"
+          },
+          {
+            "name": "硅橡胶 VMQ",
+            "price_range": "28000-35000",
+            "unit": "元/吨",
+            "source": "行业调研 2025",
+            "notes": "高温密封件/涡轮管用"
+          }
+        ]
+      }
+    ],
+    "cost_calculation_examples": [
+      {
+        "example": "PP-TD20注塑件",
+        "formula": "单件材料成本 = 材料单价×净重×(1+不良率)÷(1-材料利用率)",
+        "result": "12.0×1.0×1.02÷0.85 = 14.4元/件"
+      },
+      {
+        "example": "DC04冷轧钢板冲压件",
+        "formula": "单件材料成本 = 材料单价×净重×(1+不良率)÷(1-材料利用率)",
+        "result": "8.5×2.5×1.01÷0.55 = 39.0元/件"
+      },
+      {
+        "example": "ADC12铝合金压铸件",
+        "formula": "单件材料成本 = 材料单价×净重×(1+不良率)÷(1-材料利用率)",
+        "result": "21.0×0.8×1.03÷0.62 = 27.8元/件"
+      }
+    ],
+    "last_synced": "2026-07-12",
+    "source_note": "混合数据：网页爬取 + 行业公开参考价。非投资建议",
+    "cost_reference": [
+      {
+        "part_type": "冲压件（车身覆盖件）",
+        "material": "DC04 0.8mm",
+        "material_price_yt": 5000,
+        "typical_utilization": "55-70%",
+        "cost_per_kg_of_part": "7-9元/kg（含材料利用率损耗）",
+        "note": "高强钢材料利用率更低，成本增加15-25%"
+      },
+      {
+        "part_type": "压铸件（铝合金）",
+        "material": "ADC12",
+        "material_price_yt": 20000,
+        "typical_utilization": "75-85%（含回料回收）",
+        "cost_per_kg_of_part": "23-28元/kg（含回料折扣）",
+        "note": "大型一体压铸利用率更高但熔炼损耗增加"
+      },
+      {
+        "part_type": "注塑件",
+        "material": "PP共聚",
+        "material_price_yt": 9500,
+        "typical_utilization": "85-95%",
+        "cost_per_kg_of_part": "10-14元/kg",
+        "note": "注塑飞边可回收，材料利用率极高"
+      },
+      {
+        "part_type": "机加件（钢材）",
+        "material": "45#钢棒",
+        "material_price_yt": 5000,
+        "typical_utilization": "30-50%（机加切削损耗大）",
+        "cost_per_kg_of_part": "12-18元/kg（含切削损失）",
+        "note": "改用精密铸造/粉末冶金可大幅提高材料利用率"
+      },
+      {
+        "part_type": "碳纤复合材料件",
+        "material": "T300级碳纤预浸料",
+        "material_price_yt": 200000,
+        "typical_utilization": "70-85%（裁剪优化）",
+        "cost_per_kg_of_part": "240-285元/kg",
+        "note": "通常用于覆盖件/结构件，单件绝对重量低"
+      }
+    ]
+  },
+  "cost_reduction_reference_ranges": {
+    "description": "汽车各品类零部件降本幅度参考范围（来源：东风技术中心/江淮汽车/知乎/行业实践，2024-2025）",
+    "disclaimer": "降本幅度与零件当前成本结构、工艺成熟度、验证周期密切相关；以下为行业典型范围，实际项目需具体测算",
+    "categories": [
+      {
+        "category": "冲压件",
+        "typical_annual_volume_pcs": "50,000-200,000（车身覆盖件高用量）",
+        "cost_structure_note": "材料成本占比50-65%，制造费用20-30%",
+        "strategies": [
+          {
+            "strategy": "高强钢替代普通钢（减薄）",
+            "savings_pct_range": "8-20%",
+            "roi_timeline": "12-18月（模具改造+验证）",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "热成形替代冷成形",
+            "savings_pct_range": "15-25%",
+            "roi_timeline": "18-24月",
+            "risk_level": "高"
+          },
+          {
+            "strategy": "套裁/废料利用",
+            "savings_pct_range": "5-15%",
+            "roi_timeline": "3-6月（工艺调整）",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "排样优化（梯形/弧形料）",
+            "savings_pct_range": "10-18%",
+            "roi_timeline": "3-6月（模具改造）",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "材料降级（非外观/非安全件）",
+            "savings_pct_range": "5-10%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "激光拼焊板",
+            "savings_pct_range": "12-20%",
+            "roi_timeline": "12-18月",
+            "risk_level": "中"
+          }
+        ]
+      },
+      {
+        "category": "塑料件",
+        "typical_annual_volume_pcs": "30,000-150,000（内饰件高用量）",
+        "cost_structure_note": "材料成本占比40-55%，制造费用25-35%",
+        "strategies": [
+          {
+            "strategy": "无喷涂化（ASA/PMMA免喷涂）",
+            "savings_pct_range": "12-20%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中（外观验收是关键）"
+          },
+          {
+            "strategy": "薄壁化（-0.5至-1.0mm）",
+            "savings_pct_range": "10-18%",
+            "roi_timeline": "3-6月",
+            "risk_level": "低-中"
+          },
+          {
+            "strategy": "填料PP替代玻纤增强PP",
+            "savings_pct_range": "15-35%",
+            "roi_timeline": "1-3月（材料认证）",
+            "risk_level": "中（性能匹配）"
+          },
+          {
+            "strategy": "多件一体化集成注塑",
+            "savings_pct_range": "15-25%",
+            "roi_timeline": "12-18月",
+            "risk_level": "高"
+          },
+          {
+            "strategy": "发泡注塑（内饰骨架）",
+            "savings_pct_range": "12-20%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "供应商切换（国产替代进口）",
+            "savings_pct_range": "5-15%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          }
+        ]
+      },
+      {
+        "category": "压铸件",
+        "typical_annual_volume_pcs": "30,000-100,000（底盘件中等用量）",
+        "cost_structure_note": "材料成本占比50-65%，模具摊销5-15%",
+        "strategies": [
+          {
+            "strategy": "铁型覆砂替代高压铸造",
+            "savings_pct_range": "20-30%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "铝合金替代铸铁",
+            "savings_pct_range": "15-25%",
+            "roi_timeline": "12-18月",
+            "risk_level": "高（性能验证）"
+          },
+          {
+            "strategy": "薄壁化（精密压铸）",
+            "savings_pct_range": "10-15%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "砂芯减少（一型多腔/一体成形）",
+            "savings_pct_range": "8-15%",
+            "roi_timeline": "3-6月",
+            "risk_level": "低-中"
+          }
+        ]
+      },
+      {
+        "category": "机加件",
+        "typical_annual_volume_pcs": "20,000-80,000",
+        "cost_structure_note": "制造费用占比50-60%（工时费为主），材料20-30%",
+        "strategies": [
+          {
+            "strategy": "近净形（减少切削余量）",
+            "savings_pct_range": "10-18%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "工艺合并（减少工序/装夹）",
+            "savings_pct_range": "8-15%",
+            "roi_timeline": "3-6月",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "材料替换（铸铁→钢/铝合金）",
+            "savings_pct_range": "8-12%",
+            "roi_timeline": "6-12月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "批量采购优化（标准尺寸定制）",
+            "savings_pct_range": "5-10%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          }
+        ]
+      },
+      {
+        "category": "电子件",
+        "typical_annual_volume_pcs": "50,000-200,000",
+        "cost_structure_note": "元器件成本占比60-75%，制造费用15-25%",
+        "strategies": [
+          {
+            "strategy": "元器件国产化（MCU/功率器件）",
+            "savings_pct_range": "20-40%",
+            "roi_timeline": "12-24月（认证周期长）",
+            "risk_level": "高"
+          },
+          {
+            "strategy": "设计方案优化（分立→集成IC）",
+            "savings_pct_range": "15-30%",
+            "roi_timeline": "6-18月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "PCB优化（层数/面积）",
+            "savings_pct_range": "10-20%",
+            "roi_timeline": "3-6月",
+            "risk_level": "中"
+          },
+          {
+            "strategy": "供应商切换（国内替代外资）",
+            "savings_pct_range": "15-30%",
+            "roi_timeline": "3-6月",
+            "risk_level": "低-中"
+          }
+        ]
+      },
+      {
+        "category": "标准件",
+        "typical_annual_volume_pcs": "100,000-1,000,000+",
+        "cost_structure_note": "采购成本占比>95%，制造费用极低",
+        "strategies": [
+          {
+            "strategy": "非标改国标/德标",
+            "savings_pct_range": "25-40%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "供应商整合/比价招标",
+            "savings_pct_range": "8-15%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "规格统一（多规格→少规格）",
+            "savings_pct_range": "10-20%",
+            "roi_timeline": "3-6月",
+            "risk_level": "低"
+          },
+          {
+            "strategy": "年度采购框架协议",
+            "savings_pct_range": "3-8%",
+            "roi_timeline": "1-3月",
+            "risk_level": "低"
+          }
+        ]
+      }
+    ],
+    "ve_vs_va_savings_benchmark": {
+      "VE_phase": {
+        "phase": "开发设计阶段",
+        "typical_savings": "15-30%",
+        "note": "因为此时可改变设计/材料/工艺，上限高"
+      },
+      "VA_phase": {
+        "phase": "批量生产阶段",
+        "typical_savings": "3-8%",
+        "note": "已量产，设计冻结，可改空间有限，主要靠工艺/采购"
+      }
+    }
+  }
+}

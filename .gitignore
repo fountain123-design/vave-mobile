@@ -1,0 +1,18 @@
+# Buildozer
+.buildozer/
+bin/
+.build/
+
+# Python
+__pycache__/
+*.pyc
+test_*.py
+run_*.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local data
+*.local.json
+user_data/
