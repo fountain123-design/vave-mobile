@@ -48,7 +48,7 @@ android.adaptive_icon = False
 # presplash.filename = %(source.dir)s/data/presplash.png
 
 # (list) Python for android requirements
-requirements = python3==3.11,kivy==2.3.1,requests,openai
+requirements = python3==3.11,hostpython3==3.11,kivy==2.3.1,requests,openai
 
 # (str) Custom source folders for requirements
 # requirements.source.kivy = ../../kivy

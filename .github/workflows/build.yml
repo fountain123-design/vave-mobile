@@ -35,6 +35,7 @@ jobs:
         env:
           GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
         run: |
+          set -eo pipefail
           buildozer -v android debug 2>&1 | tee buildozer.log
 
       - name: Upload APK
