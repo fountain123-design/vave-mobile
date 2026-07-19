@@ -34,24 +34,38 @@ jobs:
       - name: Build APK (debug)
         env:
           GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
+          # Root-cause fix: p4a runs `pip install -U pip` inside its venv, which
+          # upgrades pip to 26.x whose bundled resolvelib (1.x) removed
+          # `RequirementInformation` that p4a imports. Pin pip via a constraint so
+          # p4a's own upgrade cannot break it (22.2.2 bundles resolvelib 0.8.1).
+          PIP_CONSTRAINT: "/tmp/pip_pin.txt"
         run: |
           set -eo pipefail
+          echo "pip==22.2.2" > /tmp/pip_pin.txt
           buildozer -v android debug 2>&1 | tee buildozer.log || {
-            # Fix: buildozer's target venv ships pip 26.x whose bundled
-            # resolvelib removed `RequirementInformation`, which p4a imports.
-            # Downgrade pip in the venv(s) to 22.2.2 (resolvelib 0.8.1 keeps it).
+            # Fallback: force pip==22.2.2 in p4a venv(s) in case the constraint
+            # was somehow ignored, then retry (up to 3 times).
             for i in 1 2 3; do
-              echo "::warning::Build failed (attempt $i). Downgrading pip in venv(s)..."
+              echo "::warning::Build failed (retry $i). Pinning pip in venv(s)..."
               for V in $(find .buildozer -name venv -type d 2>/dev/null); do
-                echo "  downgrading pip in $V"
                 "$V/bin/python" -m pip install "pip==22.2.2" 2>&1 | tail -2 || true
               done
               if buildozer -v android debug 2>&1 | tee buildozer.log; then
                 echo "BUILD SUCCEEDED on retry $i"
-                break
+                exit 0
               fi
             done
+            echo "::error::Build failed after retries"
+            exit 1
           }
+
+      - name: Diagnostics (always)
+        if: always()
+        run: |
+          echo "=== bin/ ==="
+          ls -la bin/ 2>&1 || true
+          echo "=== find apks ==="
+          find . -name '*.apk' 2>/dev/null || true
 
       - name: Upload APK
         if: success()
