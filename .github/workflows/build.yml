@@ -36,7 +36,17 @@ jobs:
           GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
         run: |
           set -eo pipefail
-          buildozer -v android debug 2>&1 | tee buildozer.log
+          # Patch: force upgrade pip in buildozer's venv to fix resolvelib incompatibility
+          export PIP_UPGRADE_HOOK="python -m pip install --upgrade pip"
+          buildozer -v android debug 2>&1 | tee buildozer.log || {
+            # Fallback: locate venv and upgrade pip manually
+            VENV=$(find .buildozer -name 'venv' -type d 2>/dev/null | head -1)
+            if [ -n "$VENV" ]; then
+              echo "Upgrading pip in $VENV..."
+              "$VENV/bin/python" -m pip install --upgrade pip
+              buildozer -v android debug 2>&1 | tee buildozer.log
+            fi
+          }
 
       - name: Upload APK
         if: success()

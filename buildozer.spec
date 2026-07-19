@@ -97,6 +97,9 @@ requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.1,requests,openai
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 android.archs = arm64-v8a, armeabi-v7a
 
+# (str) Pre-build hook to upgrade pip in venv (fix resolvelib incompatibility)
+p4a.hook = %(source.dir)s/upgrade_pip_hook.py
+
 # (bool) Show build platform warnings
 log_level = 2
 
