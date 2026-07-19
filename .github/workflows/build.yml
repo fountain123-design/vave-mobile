@@ -36,16 +36,21 @@ jobs:
           GRADLE_OPTS: "-Xmx2g -XX:MaxMetaspaceSize=512m"
         run: |
           set -eo pipefail
-          # Patch: force upgrade pip in buildozer's venv to fix resolvelib incompatibility
-          export PIP_UPGRADE_HOOK="python -m pip install --upgrade pip"
           buildozer -v android debug 2>&1 | tee buildozer.log || {
-            # Fallback: locate venv and upgrade pip manually
-            VENV=$(find .buildozer -name 'venv' -type d 2>/dev/null | head -1)
-            if [ -n "$VENV" ]; then
-              echo "Upgrading pip in $VENV..."
-              "$VENV/bin/python" -m pip install --upgrade pip
-              buildozer -v android debug 2>&1 | tee buildozer.log
-            fi
+            # Fix: buildozer's target venv ships pip 26.x whose bundled
+            # resolvelib removed `RequirementInformation`, which p4a imports.
+            # Downgrade pip in the venv(s) to 22.2.2 (resolvelib 0.8.1 keeps it).
+            for i in 1 2 3; do
+              echo "::warning::Build failed (attempt $i). Downgrading pip in venv(s)..."
+              for V in $(find .buildozer -name venv -type d 2>/dev/null); do
+                echo "  downgrading pip in $V"
+                "$V/bin/python" -m pip install "pip==22.2.2" 2>&1 | tail -2 || true
+              done
+              if buildozer -v android debug 2>&1 | tee buildozer.log; then
+                echo "BUILD SUCCEEDED on retry $i"
+                break
+              fi
+            done
           }
 
       - name: Upload APK
